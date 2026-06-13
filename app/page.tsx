@@ -44,6 +44,7 @@ type CaseHistoryItem = {
   followUpAnswers?: string;
   soap_note?: SoapNote;
   drug_notes?: string[];
+  disclaimer?: string;
   createdAt: string;
 };
 
