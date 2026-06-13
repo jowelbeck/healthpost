@@ -1,0 +1,13 @@
+[
+  {
+    "name": "wrong data"
+  },
+  {
+    "animal": "Cat"
+  },
+  {
+    "id": 999,
+    "animal": "Dog",
+    "symptoms": "Running"
+  }
+]
