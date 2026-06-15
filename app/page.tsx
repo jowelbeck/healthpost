@@ -1,12 +1,10 @@
 "use client";
 
-import Link from "next/link";
-
 export default function LandingPage() {
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700&display=swap');
 
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -19,172 +17,116 @@ export default function LandingPage() {
           --white: #ffffff;
           --slate: #334155;
           --slate-light: #64748b;
-          --slate-lighter: #94a3b8;
           --border: #e2e8f0;
           --gold: #c9a84c;
           --red: #dc2626;
           --amber: #d97706;
         }
 
-        body {
-          font-family: 'Inter', system-ui, sans-serif;
-          background: var(--white);
-          color: var(--slate);
-          line-height: 1.6;
-          font-size: 15px;
-        }
+        body { font-family: 'Inter', system-ui, sans-serif; background: var(--white); color: var(--slate); line-height: 1.6; font-size: 15px; }
 
-        /* ── Nav ── */
+        /* Nav */
         nav {
           position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-          background: rgba(255,255,255,0.95);
-          backdrop-filter: blur(8px);
-          border-bottom: 1px solid var(--border);
-          padding: 0 5%;
-          height: 64px;
-          display: flex; align-items: center; justify-content: space-between;
+          background: rgba(255,255,255,0.97); backdrop-filter: blur(8px);
+          border-bottom: 1px solid var(--border); padding: 0 5%;
+          height: 64px; display: flex; align-items: center; justify-content: space-between;
         }
         .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
-        .nav-logo-mark {
-          width: 36px; height: 36px; background: var(--forest);
-          border-radius: 9px; display: flex; align-items: center;
-          justify-content: center; font-size: 18px;
-        }
+        .nav-logo-mark { width: 36px; height: 36px; background: var(--forest); border-radius: 9px; display: flex; align-items: center; justify-content: center; font-size: 18px; }
         .nav-logo-text { font-size: 18px; font-weight: 700; color: var(--forest); letter-spacing: -0.3px; }
         .nav-links { display: flex; align-items: center; gap: 28px; }
         .nav-links a { text-decoration: none; color: var(--slate-light); font-size: 14px; font-weight: 500; transition: color 0.15s; }
         .nav-links a:hover { color: var(--forest); }
-        .nav-cta {
-          background: var(--forest); color: var(--white) !important;
-          padding: 8px 20px; border-radius: 8px; font-size: 14px !important;
-          font-weight: 600 !important; transition: background 0.15s !important;
-        }
-        .nav-cta:hover { background: var(--forest-mid) !important; color: var(--white) !important; }
+        .nav-cta { background: var(--forest); color: var(--white) !important; padding: 8px 20px; border-radius: 8px; font-size: 14px !important; font-weight: 600 !important; }
+        .nav-cta:hover { background: var(--forest-mid) !important; }
 
-        /* ── Hero ── */
+        /* Hero */
         .hero {
           padding: 140px 5% 100px;
           background: linear-gradient(160deg, var(--forest) 0%, var(--forest-mid) 60%, var(--green) 100%);
-          color: var(--white);
-          position: relative;
-          overflow: hidden;
+          color: var(--white); position: relative; overflow: hidden;
         }
         .hero::before {
-          content: '';
-          position: absolute; inset: 0;
-          background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+          content: ''; position: absolute; inset: 0;
+          background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Ccircle cx='30' cy='30' r='2' fill='%23ffffff' fill-opacity='0.04'/%3E%3C/g%3E%3C/svg%3E");
         }
         .hero-inner { max-width: 860px; margin: 0 auto; position: relative; }
-        .hero-badge {
+        .hero-tag {
           display: inline-flex; align-items: center; gap: 8px;
           background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2);
-          padding: 6px 14px; border-radius: 20px; font-size: 13px; font-weight: 500;
-          margin-bottom: 28px; color: rgba(255,255,255,0.9);
+          padding: 5px 14px; border-radius: 20px; font-size: 12px; font-weight: 600;
+          margin-bottom: 28px; color: rgba(255,255,255,0.9); text-transform: uppercase; letter-spacing: 0.5px;
         }
         .hero h1 {
           font-family: 'Playfair Display', Georgia, serif;
-          font-size: clamp(36px, 6vw, 64px);
-          font-weight: 700;
-          line-height: 1.1;
-          letter-spacing: -1px;
-          margin-bottom: 24px;
-          color: var(--white);
+          font-size: clamp(36px, 6vw, 62px); font-weight: 700;
+          line-height: 1.1; letter-spacing: -1px; margin-bottom: 24px; color: var(--white);
         }
-        .hero h1 em { font-style: italic; color: rgba(255,255,255,0.75); }
-        .hero-sub {
-          font-size: clamp(16px, 2vw, 20px);
-          color: rgba(255,255,255,0.8);
-          max-width: 600px;
-          margin-bottom: 40px;
-          line-height: 1.6;
-          font-weight: 300;
-        }
-        .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
-        .btn-hero-primary {
-          background: var(--white); color: var(--forest);
-          padding: 14px 28px; border-radius: 10px;
-          font-size: 15px; font-weight: 700;
-          text-decoration: none; transition: all 0.15s;
-          display: inline-flex; align-items: center; gap: 8px;
-        }
-        .btn-hero-primary:hover { background: var(--cream); transform: translateY(-1px); }
-        .btn-hero-secondary {
-          color: rgba(255,255,255,0.85); font-size: 14px; font-weight: 500;
-          text-decoration: none; display: inline-flex; align-items: center; gap: 6px;
-          border-bottom: 1px solid rgba(255,255,255,0.3); padding-bottom: 2px;
-          transition: all 0.15s;
-        }
-        .btn-hero-secondary:hover { color: var(--white); border-color: var(--white); }
-        .hero-note { margin-top: 20px; font-size: 13px; color: rgba(255,255,255,0.5); }
+        .hero h1 em { font-style: italic; color: rgba(255,255,255,0.7); }
+        .hero-sub { font-size: clamp(16px, 2vw, 19px); color: rgba(255,255,255,0.8); max-width: 580px; margin-bottom: 28px; line-height: 1.65; font-weight: 300; }
+        .hero-for { display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 36px; }
+        .hero-for-item { display: flex; align-items: center; gap: 7px; font-size: 13px; color: rgba(255,255,255,0.8); }
+        .hero-for-item::before { content: "✓"; color: var(--green-light); font-weight: 700; }
+        .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+        .btn-primary { background: var(--white); color: var(--forest); padding: 14px 28px; border-radius: 10px; font-size: 15px; font-weight: 700; text-decoration: none; transition: all 0.15s; display: inline-flex; align-items: center; gap: 8px; }
+        .btn-primary:hover { background: var(--cream); transform: translateY(-1px); }
+        .btn-outline { color: rgba(255,255,255,0.9); font-size: 14px; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; border: 1.5px solid rgba(255,255,255,0.35); padding: 13px 24px; border-radius: 10px; transition: all 0.15s; }
+        .btn-outline:hover { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.6); }
+        .hero-note { margin-top: 18px; font-size: 12px; color: rgba(255,255,255,0.45); }
 
-        /* ── Stats bar ── */
-        .stats-bar {
-          background: var(--cream);
-          border-bottom: 1px solid var(--border);
-          padding: 24px 5%;
-        }
-        .stats-inner {
-          max-width: 860px; margin: 0 auto;
-          display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-          gap: 24px;
-        }
+        /* Stats */
+        .stats-bar { background: var(--cream); border-bottom: 1px solid var(--border); padding: 24px 5%; }
+        .stats-inner { max-width: 860px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 24px; }
         .stat { text-align: center; }
         .stat-num { font-size: 28px; font-weight: 700; color: var(--forest); letter-spacing: -1px; }
         .stat-label { font-size: 12px; color: var(--slate-light); margin-top: 2px; }
 
-        /* ── Section ── */
+        /* Sections */
         section { padding: 80px 5%; }
         .section-inner { max-width: 860px; margin: 0 auto; }
-        .eyebrow {
-          font-size: 11px; font-weight: 700; text-transform: uppercase;
-          letter-spacing: 1.5px; color: var(--green); margin-bottom: 12px;
-        }
-        .section-title {
-          font-family: 'Playfair Display', Georgia, serif;
-          font-size: clamp(28px, 4vw, 42px);
-          font-weight: 700; color: var(--forest);
-          letter-spacing: -0.5px; margin-bottom: 16px; line-height: 1.2;
-        }
+        .eyebrow { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: var(--green); margin-bottom: 12px; }
+        .section-title { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(26px, 4vw, 40px); font-weight: 700; color: var(--forest); letter-spacing: -0.5px; margin-bottom: 16px; line-height: 1.2; }
         .section-sub { font-size: 17px; color: var(--slate-light); max-width: 540px; line-height: 1.6; }
 
-        /* ── Features ── */
-        .features-bg { background: var(--white); }
-        .features-grid {
-          display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-          gap: 20px; margin-top: 48px;
-        }
-        .feature-card {
-          background: var(--cream); border: 1px solid var(--border);
-          border-radius: 14px; padding: 24px;
-          transition: box-shadow 0.15s, transform 0.15s;
-        }
-        .feature-card:hover { box-shadow: 0 8px 24px rgba(26,61,43,0.08); transform: translateY(-2px); }
-        .feature-icon {
-          width: 44px; height: 44px; background: var(--forest);
-          border-radius: 10px; display: flex; align-items: center;
-          justify-content: center; font-size: 20px; margin-bottom: 16px;
-        }
-        .feature-title { font-size: 15px; font-weight: 600; color: var(--forest); margin-bottom: 8px; }
-        .feature-desc { font-size: 13px; color: var(--slate-light); line-height: 1.6; }
+        /* Problem section */
+        .problem-bg { background: var(--white); }
+        .problem-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 48px; align-items: center; }
+        .problem-list { list-style: none; padding: 0; }
+        .problem-list li { padding: 14px 0; border-bottom: 1px solid var(--border); font-size: 15px; color: var(--slate); display: flex; gap: 12px; align-items: flex-start; }
+        .problem-list li:last-child { border-bottom: none; }
+        .problem-icon { font-size: 20px; flex-shrink: 0; margin-top: 1px; }
+        .problem-text strong { display: block; font-weight: 600; color: var(--forest); margin-bottom: 3px; }
+        .problem-text span { font-size: 13px; color: var(--slate-light); }
+        .solution-box { background: var(--forest); border-radius: 16px; padding: 32px; color: var(--white); }
+        .solution-box h3 { font-family: 'Playfair Display', Georgia, serif; font-size: 22px; margin-bottom: 16px; color: var(--white); }
+        .solution-box p { font-size: 14px; color: rgba(255,255,255,0.75); line-height: 1.7; margin-bottom: 20px; }
+        .solution-items { list-style: none; padding: 0; }
+        .solution-items li { font-size: 13px; color: rgba(255,255,255,0.85); padding: 6px 0; display: flex; gap: 8px; }
+        .solution-items li::before { content: "→"; color: var(--green-light); font-weight: 700; flex-shrink: 0; }
 
-        /* ── How it works ── */
+        /* Modules */
+        .modules-bg { background: var(--cream); }
+        .modules-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin-top: 48px; }
+        .module-card { background: var(--white); border: 1px solid var(--border); border-radius: 14px; padding: 24px; transition: box-shadow 0.15s, transform 0.15s; position: relative; }
+        .module-card:hover { box-shadow: 0 8px 24px rgba(26,61,43,0.08); transform: translateY(-2px); }
+        .module-card.live::after { content: "Live"; position: absolute; top: 14px; right: 14px; background: var(--green); color: var(--white); font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.5px; }
+        .module-card.coming::after { content: "Coming soon"; position: absolute; top: 14px; right: 14px; background: var(--border); color: var(--slate-light); font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.5px; }
+        .module-icon { font-size: 28px; margin-bottom: 12px; }
+        .module-title { font-size: 15px; font-weight: 600; color: var(--forest); margin-bottom: 6px; }
+        .module-desc { font-size: 13px; color: var(--slate-light); line-height: 1.6; }
+
+        /* How it works */
         .how-bg { background: var(--forest); color: var(--white); }
         .how-bg .eyebrow { color: var(--green-light); }
         .how-bg .section-title { color: var(--white); }
-        .how-bg .section-sub { color: rgba(255,255,255,0.7); }
-        .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 32px; margin-top: 48px; }
-        .step { position: relative; }
-        .step-num {
-          font-family: 'Playfair Display', Georgia, serif;
-          font-size: 48px; font-weight: 700;
-          color: rgba(255,255,255,0.1); line-height: 1;
-          margin-bottom: 12px;
-        }
+        .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 32px; margin-top: 48px; }
+        .step-num { font-family: 'Playfair Display', Georgia, serif; font-size: 48px; font-weight: 700; color: rgba(255,255,255,0.1); line-height: 1; margin-bottom: 12px; }
         .step-title { font-size: 16px; font-weight: 600; color: var(--white); margin-bottom: 8px; }
         .step-desc { font-size: 13px; color: rgba(255,255,255,0.6); line-height: 1.6; }
 
-        /* ── Urgency demo ── */
-        .demo-bg { background: var(--cream); }
+        /* Urgency */
+        .urgency-bg { background: var(--white); }
         .urgency-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 40px; }
         .urgency-card { border-radius: 12px; padding: 20px; border: 1px solid; }
         .urgency-high { background: #fef2f2; border-color: #fecaca; }
@@ -197,26 +139,13 @@ export default function LandingPage() {
         .urgency-title { font-size: 14px; font-weight: 600; color: var(--slate); margin-bottom: 6px; }
         .urgency-examples { font-size: 12px; color: var(--slate-light); line-height: 1.6; }
 
-        /* ── Pricing ── */
-        .pricing-bg { background: var(--white); }
+        /* Pricing */
+        .pricing-bg { background: var(--cream); }
         .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; margin-top: 48px; }
-        .pricing-card {
-          border: 1px solid var(--border); border-radius: 16px;
-          padding: 28px 24px; position: relative;
-          transition: box-shadow 0.15s;
-        }
+        .pricing-card { background: var(--white); border: 1px solid var(--border); border-radius: 16px; padding: 28px 24px; position: relative; transition: box-shadow 0.15s; }
         .pricing-card:hover { box-shadow: 0 8px 24px rgba(26,61,43,0.08); }
-        .pricing-card.featured {
-          background: var(--forest); color: var(--white);
-          border-color: var(--forest);
-        }
-        .pricing-popular {
-          position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
-          background: var(--gold); color: var(--white);
-          font-size: 11px; font-weight: 700; padding: 4px 14px;
-          border-radius: 20px; text-transform: uppercase; letter-spacing: 0.5px;
-          white-space: nowrap;
-        }
+        .pricing-card.featured { background: var(--forest); border-color: var(--forest); }
+        .pricing-popular { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--gold); color: var(--white); font-size: 11px; font-weight: 700; padding: 4px 14px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.5px; white-space: nowrap; }
         .pricing-name { font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 12px; color: var(--slate-light); }
         .pricing-card.featured .pricing-name { color: rgba(255,255,255,0.6); }
         .pricing-price { font-size: 36px; font-weight: 700; letter-spacing: -1px; color: var(--forest); margin-bottom: 4px; }
@@ -229,142 +158,156 @@ export default function LandingPage() {
         .pricing-features li:last-child { border-bottom: none; }
         .pricing-features li::before { content: "✓"; color: var(--green); font-weight: 700; flex-shrink: 0; }
         .pricing-card.featured .pricing-features li::before { color: var(--green-light); }
-        .btn-pricing {
-          display: block; text-align: center; padding: 11px;
-          border-radius: 8px; font-size: 14px; font-weight: 600;
-          text-decoration: none; transition: all 0.15s;
-          border: 1.5px solid var(--forest); color: var(--forest);
-        }
+        .btn-pricing { display: block; text-align: center; padding: 11px; border-radius: 8px; font-size: 14px; font-weight: 600; text-decoration: none; transition: all 0.15s; border: 1.5px solid var(--forest); color: var(--forest); }
         .btn-pricing:hover { background: var(--forest); color: var(--white); }
-        .pricing-card.featured .btn-pricing {
-          background: var(--white); color: var(--forest); border-color: var(--white);
-        }
-        .pricing-card.featured .btn-pricing:hover { background: var(--cream); }
+        .pricing-card.featured .btn-pricing { background: var(--white); color: var(--forest); border-color: var(--white); }
 
-        /* ── CTA ── */
-        .cta-bg {
-          background: linear-gradient(135deg, var(--forest) 0%, var(--green) 100%);
-          text-align: center; color: var(--white);
-        }
+        /* CTA */
+        .cta-bg { background: linear-gradient(135deg, var(--forest) 0%, var(--green) 100%); text-align: center; }
         .cta-bg .section-title { color: var(--white); }
-        .cta-sub { font-size: 18px; color: rgba(255,255,255,0.8); margin-bottom: 36px; }
-        .cta-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+        .cta-sub { font-size: 18px; color: rgba(255,255,255,0.8); margin-bottom: 36px; max-width: 560px; margin-left: auto; margin-right: auto; line-height: 1.6; }
+        .cta-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
 
-        /* ── Footer ── */
-        footer {
-          background: var(--forest); color: rgba(255,255,255,0.6);
-          padding: 40px 5%; text-align: center; font-size: 13px;
-        }
+        /* Footer */
+        footer { background: var(--forest); color: rgba(255,255,255,0.6); padding: 40px 5%; text-align: center; font-size: 13px; }
         footer a { color: rgba(255,255,255,0.6); text-decoration: none; }
         footer a:hover { color: var(--white); }
 
-        @media (max-width: 600px) {
+        @media (max-width: 700px) {
           .nav-links { display: none; }
           .urgency-cards { grid-template-columns: 1fr; }
+          .problem-grid { grid-template-columns: 1fr; }
           .hero { padding: 120px 5% 60px; }
         }
       `}</style>
 
-      {/* ── Nav ── */}
+      {/* Nav */}
       <nav>
         <a href="/" className="nav-logo">
           <div className="nav-logo-mark">🐾</div>
           <span className="nav-logo-text">VetsAI</span>
         </a>
         <div className="nav-links">
-          <a href="#features">Features</a>
+          <a href="#modules">Platform</a>
           <a href="#how-it-works">How it works</a>
           <a href="#pricing">Pricing</a>
-          <a href="/app" className="nav-cta">Try free →</a>
+          <a href="mailto:hi@vetsai.app">Book demo</a>
+          <a href="/app" className="nav-cta">Start free →</a>
         </div>
       </nav>
 
-      {/* ── Hero ── */}
+      {/* Hero */}
       <section className="hero">
         <div className="hero-inner">
-          <div className="hero-badge">
-            🔬 Powered by the Merck Veterinary Manual & World-Class Veterinary Research
-          </div>
+          <div className="hero-tag">🤖 Agentic AI · Clinic Operating System</div>
           <h1>
-            Clinical decisions,<br />
-            <em>faster than ever.</em>
+            Run your veterinary clinic<br />
+            <em>with AI that thinks and acts.</em>
           </h1>
           <p className="hero-sub">
-            VetsAI is an AI-powered clinical decision support tool for veterinary professionals.
-            Triage cases, get differential diagnoses, drug dosage notes, and SOAP notes — in under 60 seconds.
+            VetsAI is the AI-powered operating system for veterinary clinics. Manage cases, generate clinical notes, check drug dosages, and support your vets — all from one agentic AI platform.
           </p>
-          <div className="hero-actions">
-            <a href="/app" className="btn-hero-primary">
-              Start free trial →
-            </a>
-            <a href="#how-it-works" className="btn-hero-secondary">
-              See how it works
-            </a>
+          <div className="hero-for">
+            <div className="hero-for-item">Veterinary clinics</div>
+            <div className="hero-for-item">Private practices</div>
+            <div className="hero-for-item">Mobile veterinarians</div>
+            <div className="hero-for-item">Vet schools</div>
           </div>
-          <p className="hero-note">No credit card required · First 3 months free for clinics</p>
+          <div className="hero-actions">
+            <a href="/app" className="btn-primary">Start free trial →</a>
+            <a href="mailto:hi@vetsai.app" className="btn-outline">📅 Book a clinic demo</a>
+          </div>
+          <p className="hero-note">No credit card required · First 3 months free · Cancel anytime</p>
         </div>
       </section>
 
-      {/* ── Stats ── */}
+      {/* Stats */}
       <div className="stats-bar">
         <div className="stats-inner">
-          <div className="stat">
-            <div className="stat-num">3,367</div>
-            <div className="stat-label">Pages of Merck Vet Manual</div>
-          </div>
-          <div className="stat">
-            <div className="stat-num">&lt;60s</div>
-            <div className="stat-label">Time to full assessment</div>
-          </div>
-          <div className="stat">
-            <div className="stat-num">15+</div>
-            <div className="stat-label">Animal species supported</div>
-          </div>
-          <div className="stat">
-            <div className="stat-num">$0</div>
-            <div className="stat-label">To get started today</div>
-          </div>
+          <div className="stat"><div className="stat-num">3,367</div><div className="stat-label">Pages of Merck Vet Manual</div></div>
+          <div className="stat"><div className="stat-num">&lt;60s</div><div className="stat-label">Time to full assessment</div></div>
+          <div className="stat"><div className="stat-num">15+</div><div className="stat-label">Animal species supported</div></div>
+          <div className="stat"><div className="stat-num">$0</div><div className="stat-label">To get started today</div></div>
         </div>
       </div>
 
-      {/* ── Features ── */}
-      <section className="features-bg" id="features">
+      {/* Problem */}
+      <section className="problem-bg">
         <div className="section-inner">
-          <div className="eyebrow">What VetsAI does</div>
-          <h2 className="section-title">Everything a vet needs,<br />in one place</h2>
-          <p className="section-sub">Built for busy veterinary professionals who need fast, reliable clinical support.</p>
+          <div className="eyebrow">The problem we solve</div>
+          <h2 className="section-title">Vets spend too much time<br />on paperwork, not patients</h2>
+          <div className="problem-grid">
+            <ul className="problem-list">
+              {[
+                { icon: "⏱️", title: "30+ minutes per case", desc: "Writing SOAP notes, looking up drug dosages, documenting history manually" },
+                { icon: "📋", title: "Inconsistent records", desc: "Paper files, scattered notes, no continuity between consultations" },
+                { icon: "💊", title: "Drug errors", desc: "Dosage miscalculations and missed drug interactions put patients at risk" },
+                { icon: "🚨", title: "Missed emergencies", desc: "No system to flag and prioritise high-urgency cases automatically" },
+              ].map((p) => (
+                <li key={p.title}>
+                  <span className="problem-icon">{p.icon}</span>
+                  <span className="problem-text">
+                    <strong>{p.title}</strong>
+                    <span>{p.desc}</span>
+                  </span>
+                </li>
+              ))}
+            </ul>
+            <div className="solution-box">
+              <h3>VetsAI solves all of this</h3>
+              <p>One agentic AI platform that handles the clinical administration — so your vets can focus on what matters: the animals.</p>
+              <ul className="solution-items">
+                <li>Auto-generate SOAP notes in seconds</li>
+                <li>Instant drug dosage checks by species and weight</li>
+                <li>Automatic urgency triage for every case</li>
+                <li>Full patient history in one place</li>
+                <li>Powered by the Merck Veterinary Manual</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
 
-          <div className="features-grid">
+      {/* Modules */}
+      <section className="modules-bg" id="modules">
+        <div className="section-inner">
+          <div className="eyebrow">The platform</div>
+          <h2 className="section-title">Everything your clinic needs,<br />in one place</h2>
+          <p className="section-sub">VetsAI is built as a full clinic operating system — not just a diagnostic tool.</p>
+          <div className="modules-grid">
             {[
-              { icon: "🚨", title: "Urgency triage", desc: "Instantly flags high-urgency emergencies — collapse, seizures, severe bleeding — so you never miss a critical case." },
-              { icon: "🧠", title: "Differential diagnoses", desc: "AI-powered reasoning across symptoms, breed, age, and weight to generate the most likely causes." },
-              { icon: "💊", title: "Drug & dosage notes", desc: "Safe dosage ranges by species and weight, plus interaction warnings for common veterinary medications." },
-              { icon: "📋", title: "SOAP note drafts", desc: "Auto-generates Subjective, Objective, Assessment, and Plan notes for you to review and edit." },
-              { icon: "📚", title: "Merck Manual powered", desc: "Every response is grounded in 3,367 pages of the Merck Veterinary Manual — the gold standard in vet medicine." },
-              { icon: "🖨️", title: "Printable reports", desc: "One-click printable case reports to share with pet owners or keep on file for your records." },
-            ].map((f) => (
-              <div className="feature-card" key={f.title}>
-                <div className="feature-icon">{f.icon}</div>
-                <div className="feature-title">{f.title}</div>
-                <div className="feature-desc">{f.desc}</div>
+              { icon: "🧠", title: "AI Diagnostics", desc: "Agentic reasoning across symptoms, breed, age and weight to generate differential diagnoses instantly.", live: true },
+              { icon: "💊", title: "Drug Checker", desc: "Safe dosage ranges by species and weight, plus interaction warnings for common vet medications.", live: true },
+              { icon: "📋", title: "SOAP Notes", desc: "Auto-draft Subjective, Objective, Assessment and Plan notes — ready for your vet to review.", live: true },
+              { icon: "🚨", title: "Urgency Triage", desc: "Automatically flags high, medium and low urgency cases so you never miss a critical emergency.", live: true },
+              { icon: "📁", title: "Patient Records", desc: "Full pet medical history, consultation logs, and owner details — all in one secure place.", live: false },
+              { icon: "📅", title: "Appointments", desc: "Scheduling, reminders, and calendar management for your entire clinic team.", live: false },
+              { icon: "💰", title: "Billing & Invoicing", desc: "Generate invoices, track payments, and manage clinic finances from one dashboard.", live: false },
+              { icon: "👥", title: "Multi-user Accounts", desc: "Role-based access for vets, nurses, and admin staff across your entire clinic.", live: false },
+              { icon: "📊", title: "Analytics", desc: "Case trends, common diagnoses, urgency patterns, and clinic performance reports.", live: false },
+            ].map((m) => (
+              <div className={`module-card ${m.live ? "live" : "coming"}`} key={m.title}>
+                <div className="module-icon">{m.icon}</div>
+                <div className="module-title">{m.title}</div>
+                <div className="module-desc">{m.desc}</div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ── How it works ── */}
+      {/* How it works */}
       <section className="how-bg" id="how-it-works">
         <div className="section-inner">
           <div className="eyebrow">How it works</div>
-          <h2 className="section-title">From symptoms to assessment in 3 steps</h2>
-          <p className="section-sub" style={{ color: "rgba(255,255,255,0.65)" }}>No training required. Start analyzing cases immediately.</p>
-
+          <h2 className="section-title">Up and running in minutes</h2>
+          <p className="section-sub" style={{ color: "rgba(255,255,255,0.65)" }}>No installation. No training. Start managing cases immediately.</p>
           <div className="steps">
             {[
-              { num: "01", title: "Enter the case", desc: "Input the animal type, breed, age, weight, and symptoms. The more detail, the better the assessment." },
-              { num: "02", title: "AI analyzes", desc: "VetsAI searches the Merck Manual, checks drug interactions, runs urgency triage, and reasons across all inputs." },
-              { num: "03", title: "Get your assessment", desc: "Receive differential diagnoses, drug notes, a SOAP note draft, and a printable report — all in under 60 seconds." },
+              { num: "01", title: "Enter the case", desc: "Input the animal type, breed, age, weight and symptoms. The more detail, the smarter the assessment." },
+              { num: "02", title: "Agent reasons autonomously", desc: "VetsAI searches the Merck Manual, checks drug interactions, triages urgency, and generates a full clinical picture — automatically." },
+              { num: "03", title: "Get your full assessment", desc: "Differential diagnoses, drug notes, SOAP note draft, and a printable report — all in under 60 seconds." },
+              { num: "04", title: "Save to patient records", desc: "Every case is automatically saved to your clinic's patient history for full continuity of care." },
             ].map((s) => (
               <div className="step" key={s.num}>
                 <div className="step-num">{s.num}</div>
@@ -376,13 +319,12 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* ── Urgency demo ── */}
-      <section className="demo-bg">
+      {/* Urgency */}
+      <section className="urgency-bg">
         <div className="section-inner">
           <div className="eyebrow">Urgency detection</div>
           <h2 className="section-title">Never miss a critical case</h2>
-          <p className="section-sub">VetsAI automatically flags every case by urgency level so you can prioritise correctly.</p>
-
+          <p className="section-sub">VetsAI automatically triages every case so your team always knows what to prioritise.</p>
           <div className="urgency-cards">
             <div className="urgency-card urgency-high">
               <div className="urgency-label">🔴 High urgency</div>
@@ -403,30 +345,28 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* ── Pricing ── */}
+      {/* Pricing */}
       <section className="pricing-bg" id="pricing">
         <div className="section-inner">
           <div className="eyebrow">Pricing</div>
           <h2 className="section-title">Simple, transparent pricing</h2>
           <p className="section-sub">Start free for 3 months. No credit card required. Cancel anytime.</p>
-
           <div className="pricing-grid">
             {[
               {
                 name: "Starter", price: "$49", period: "per month",
-                features: ["1 vet account", "Up to 50 cases/month", "Full AI diagnostics", "Drug dosage notes", "SOAP note drafts", "Email support"],
-                featured: false,
+                features: ["1 vet account", "Up to 50 cases/month", "AI diagnostics & triage", "Drug dosage notes", "SOAP note drafts", "Printable reports", "Email support"],
+                featured: false, popular: false,
               },
               {
                 name: "Professional", price: "$99", period: "per month",
-                features: ["3 vet accounts", "Unlimited cases", "Full AI diagnostics", "Drug dosage notes", "SOAP note drafts", "Case history & export", "Priority support"],
-                featured: true,
-                popular: true,
+                features: ["3 vet accounts", "Unlimited cases", "AI diagnostics & triage", "Drug dosage notes", "SOAP note drafts", "Patient records", "Case history & export", "Priority support"],
+                featured: true, popular: true,
               },
               {
-                name: "Clinic", price: "$199", period: "per month",
-                features: ["10 vet accounts", "Unlimited cases", "Full AI diagnostics", "Drug dosage notes", "SOAP note drafts", "Advanced analytics", "Dedicated support"],
-                featured: false,
+                name: "Clinic OS", price: "$199", period: "per month",
+                features: ["10 vet accounts", "Unlimited cases", "Full clinic OS access", "Patient records", "Appointments", "Billing & invoicing", "Advanced analytics", "Dedicated support"],
+                featured: false, popular: false,
               },
             ].map((p) => (
               <div className={`pricing-card ${p.featured ? "featured" : ""}`} key={p.name}>
@@ -444,30 +384,30 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* ── CTA ── */}
+      {/* CTA */}
       <section className="cta-bg">
-        <div className="section-inner" style={{ textAlign: "center" }}>
+        <div className="section-inner">
           <div className="eyebrow" style={{ color: "rgba(255,255,255,0.6)" }}>Get started today</div>
-          <h2 className="section-title">Ready to transform your clinic?</h2>
-          <p className="cta-sub">Trusted by veterinary professionals worldwide — delivering faster, smarter clinical care wherever you practice. using VetsAI to deliver faster, smarter clinical care.</p>
-          <div className="cta-actions">
-            <a href="/app" className="btn-hero-primary">Start free trial →</a>
-            <a href="mailto:hi@vetsai.app" className="btn-hero-secondary">Contact us</a>
-          </div>
-          <p style={{ marginTop: 20, fontSize: 13, color: "rgba(255,255,255,0.4)" }}>
-            First 10 clinics get 3 months completely free
+          <h2 className="section-title">Ready to run a smarter clinic?</h2>
+          <p className="cta-sub">
+            Trusted by veterinary professionals worldwide — from Ghana to the UK, Nigeria to the US. VetsAI delivers agentic AI clinical support wherever you practice.
           </p>
+          <div className="cta-actions">
+            <a href="/app" className="btn-primary">Start free trial →</a>
+            <a href="mailto:hi@vetsai.app" className="btn-outline">📅 Book a clinic demo</a>
+          </div>
+          <p style={{ marginTop: 20, fontSize: 12, color: "rgba(255,255,255,0.4)" }}>First 10 clinics get 3 months completely free</p>
         </div>
       </section>
 
-      {/* ── Footer ── */}
+      {/* Footer */}
       <footer>
         <div style={{ marginBottom: 12 }}>
           <span style={{ color: "rgba(255,255,255,0.9)", fontWeight: 600 }}>🐾 VetsAI</span>
-          &nbsp;·&nbsp; AI-powered clinical decision support for veterinary professionals
+          &nbsp;·&nbsp; Agentic AI clinic operating system for veterinary professionals worldwide
         </div>
         <div style={{ display: "flex", gap: 20, justifyContent: "center", flexWrap: "wrap", marginBottom: 16 }}>
-          <a href="#features">Features</a>
+          <a href="#modules">Platform</a>
           <a href="#how-it-works">How it works</a>
           <a href="#pricing">Pricing</a>
           <a href="/app">Try free</a>
