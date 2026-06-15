@@ -283,7 +283,7 @@ export default function LandingPage() {
       <section className="hero">
         <div className="hero-inner">
           <div className="hero-badge">
-            🔬 Powered by the Merck Veterinary Manual — 3,367 pages
+            🔬 Powered by the Merck Veterinary Manual & World-Class Veterinary Research
           </div>
           <h1>
             Clinical decisions,<br />
@@ -449,7 +449,7 @@ export default function LandingPage() {
         <div className="section-inner" style={{ textAlign: "center" }}>
           <div className="eyebrow" style={{ color: "rgba(255,255,255,0.6)" }}>Get started today</div>
           <h2 className="section-title">Ready to transform your clinic?</h2>
-          <p className="cta-sub">Join veterinary professionals across Africa using VetsAI to deliver faster, smarter clinical care.</p>
+          <p className="cta-sub">Trusted by veterinary professionals worldwide — delivering faster, smarter clinical care wherever you practice. using VetsAI to deliver faster, smarter clinical care.</p>
           <div className="cta-actions">
             <a href="/app" className="btn-hero-primary">Start free trial →</a>
             <a href="mailto:hi@vetsai.app" className="btn-hero-secondary">Contact us</a>
