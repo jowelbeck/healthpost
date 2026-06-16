@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { supabase } from "@/lib/supabase";
 
 export default function SignupPage() {
@@ -10,6 +11,7 @@ export default function SignupPage() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [success, setSuccess] = useState(false);
+  const router = useRouter();
 
   const handleSignup = async () => {
     if (!clinicName.trim() || !email.trim() || !password.trim()) {
@@ -39,6 +41,9 @@ export default function SignupPage() {
     }
 
     setSuccess(true);
+    setTimeout(() => {
+    router.push("/onboarding");
+    }, 2000);
     setLoading(false);
   };
 
