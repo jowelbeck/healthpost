@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { supabase } from "@/lib/supabase";
 
@@ -12,11 +12,11 @@ export default function LoginPage() {
   const router = useRouter();
 
   const handleLogin = async () => {
-    const email = emailRef.current?.value || "";
-    const password = passwordRef.current?.value || "";
+    const email = emailRef.current?.value ?? "";
+    const password = passwordRef.current?.value ?? "";
 
     if (!email.trim() || !password.trim()) {
-      setError(`Please enter your email and password.`);
+      setError("Please enter your email and password.");
       return;
     }
 
