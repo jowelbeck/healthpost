@@ -341,7 +341,7 @@ export default function Home() {
 <html>
 <head>
   <meta charset="utf-8"/>
-  <title>VetAssist Case Report — ${petData.petName || petData.animal}</title>
+  <title>VetsAI Case Report — ${petData.petName || petData.animal}</title>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { font-family: system-ui, -apple-system, sans-serif; font-size: 13px; color: #1e293b; padding: 40px; max-width: 720px; margin: 0 auto; }
@@ -367,7 +367,7 @@ export default function Home() {
 </head>
 <body>
   <div class="header">
-    <div class="logo">🐾 VetAssist<span>Clinical Decision Support</span></div>
+    <div class="logo">🐾 VetsAI<span>Clinical Decision Support</span></div>
     <div class="report-date">Case Report<br/>${date}</div>
   </div>
 
@@ -584,7 +584,7 @@ export default function Home() {
           <div className="header-left">
             <div className="logo-mark">🐾</div>
             <div>
-              <h1>VetAssist</h1>
+              <h1>VetsAI</h1>
               <div className="header-sub">Clinical decision support</div>
             </div>
           </div>

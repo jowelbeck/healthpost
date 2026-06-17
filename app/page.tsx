@@ -210,7 +210,7 @@ export default function LandingPage() {
           <a href="#how-it-works">How it works</a>
           <a href="#pricing">Pricing</a>
           <a href="mailto:hi@vetsai.app">Book demo</a>
-          <a href="/app" className="nav-cta">Start free →</a>
+          <a href="/signup" className="nav-cta">Start free →</a>
         </div>
       </nav>
 
@@ -232,7 +232,7 @@ export default function LandingPage() {
             <div className="hero-for-item">Vet schools</div>
           </div>
           <div className="hero-actions">
-            <a href="/app" className="btn-primary">Start free trial →</a>
+            <a href="/signup" className="btn-primary">Start free trial →</a>
             <a href="mailto:hi@vetsai.app" className="btn-outline">📅 Book a clinic demo</a>
           </div>
           <p className="hero-note">No credit card required · First 3 months free · Cancel anytime</p>
@@ -454,7 +454,7 @@ export default function LandingPage() {
                 <ul className="pricing-features">
                   {p.features.map((f) => <li key={f}>{f}</li>)}
                 </ul>
-                <a href="/app" className="btn-pricing">Start free trial</a>
+                <a href="/signup" className="btn-pricing">Start free trial</a>
               </div>
             ))}
           </div>
@@ -470,7 +470,7 @@ export default function LandingPage() {
             Designed for veterinary professionals across Africa and beyond — VetsAI delivers intelligent clinical support wherever you practice.
           </p>
           <div className="cta-actions">
-            <a href="/app" className="btn-primary">Start free trial →</a>
+            <a href="/signup" className="btn-primary">Start free trial →</a>
             <a href="mailto:hi@vetsai.app" className="btn-outline">📅 Book a clinic demo</a>
           </div>
           <p style={{ marginTop: 20, fontSize: 12, color: "rgba(255,255,255,0.4)" }}>First 10 clinics get 3 months completely free</p>
@@ -487,7 +487,7 @@ export default function LandingPage() {
           <a href="#modules">Platform</a>
           <a href="#how-it-works">How it works</a>
           <a href="#pricing">Pricing</a>
-          <a href="/app">Try free</a>
+          <a href="/signup">Try free</a>
           <a href="mailto:hi@vetsai.app">Contact</a>
         </div>
         <div style={{ fontSize: 12, color: "rgba(255,255,255,0.3)" }}>
