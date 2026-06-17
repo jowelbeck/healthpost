@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { supabase } from "@/lib/supabase";
 
@@ -9,9 +9,13 @@ export default function SignupPage() {
   const emailRef = useRef<HTMLInputElement>(null);
   const passwordRef = useRef<HTMLInputElement>(null);
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState("");
+  const [error, setError] = useState<string | null>(null);
   const [success, setSuccess] = useState(false);
   const router = useRouter();
+
+  useEffect(() => {
+    setError(null);
+  }, []);
 
   const handleSignup = async () => {
     const clinicName = clinicRef.current?.value ?? "";
@@ -28,7 +32,7 @@ export default function SignupPage() {
     }
 
     setLoading(true);
-    setError("");
+    setError(null);
 
     const { error } = await supabase.auth.signUp({
       email: email.trim(),
@@ -86,11 +90,11 @@ export default function SignupPage() {
 
           {success ? (
             <div className="success">
-              <p>✓ Account created! Redirecting to setup…</p>
+              <p>✓ Account created! Setting up your clinic…</p>
             </div>
           ) : (
             <>
-              {error && <div className="error">⚠ {error}</div>}
+              {error !== null && <div className="error">⚠ {error}</div>}
               <div className="field">
                 <label>Clinic name</label>
                 <input ref={clinicRef} placeholder="Accra Vet Clinic" autoComplete="organization" />
