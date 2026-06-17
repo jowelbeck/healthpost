@@ -80,14 +80,13 @@ function cap(s?: string): string {
 // ── Component ────────────────────────────────────────────────────────────────
 
 export default function Home() {
-  const searchParams = typeof window !== "undefined" ? new URLSearchParams(window.location.search) : null;
   // Form fields
-  const searchParams = typeof window !== "undefined" ? new URLSearchParams(window.location.search) : null;
-  const [animal, setAnimal] = useState(searchParams?.get("animal") ?? "");
-  const [petName, setPetName] = useState(searchParams?.get("name") ?? "");
-  const [breed, setBreed] = useState(searchParams?.get("breed") ?? "");
-  const [age, setAge] = useState(searchParams?.get("age") ?? "");
-  const [weight, setWeight] = useState(searchParams?.get("weight") ?? "");
+  const [animal, setAnimal] = useState("");
+  const [petName, setPetName] = useState("");
+  const [breed, setBreed] = useState("");
+  const [age, setAge] = useState("");
+  const [weight, setWeight] = useState("");
+  const [symptoms, setSymptoms] = useState("");
 
   // UI state
   const [tab, setTab] = useState<Tab>("new-case");
@@ -108,7 +107,14 @@ export default function Home() {
   const [searchTerm, setSearchTerm] = useState("");
 
   // ── Effects ────────────────────────────────────────────────────────────────
-
+  useEffect(() => {
+      const params = new URLSearchParams(window.location.search);
+      if (params.get("animal")) setAnimal(params.get("animal") ?? "");
+      if (params.get("name")) setPetName(params.get("name") ?? "");
+      if (params.get("breed")) setBreed(params.get("breed") ?? "");
+      if (params.get("age")) setAge(params.get("age") ?? "");
+      if (params.get("weight")) setWeight(params.get("weight") ?? "");
+    }, []);
   useEffect(() => {
     try {
       const saved = localStorage.getItem("caseHistory");
