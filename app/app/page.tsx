@@ -585,7 +585,16 @@ export default function Home() {
             <div className="logo-mark">🐾</div>
             <div>
               <h1>VetsAI</h1>
-              <div className="header-sub">Clinical decision support</div>
+              <div className="header-sub">Clinical decision support</div><button
+              style={{ fontSize: 12, padding: "6px 12px", background: "var(--slate-100)", border: "1px solid var(--slate-200)", borderRadius: 6, cursor: "pointer", color: "var(--slate-500)" }}
+              onClick={async () => {
+                const { supabase } = await import("@/lib/supabase");
+                await supabase.auth.signOut();
+                window.location.href = "/login";
+              }}
+            >
+              Log out
+            </button>
             </div>
           </div>
           <div className="tab-bar">
