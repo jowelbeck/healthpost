@@ -604,6 +604,9 @@ export default function Home() {
             </button>
             </div>
           </div>
+          <a href="/patients" style={{ fontSize: 13, fontWeight: 500, color: "var(--slate-500)", textDecoration: "none", padding: "5px 10px", borderRadius: 6, background: "var(--slate-100)" }}>
+            📁 Patients
+          </a>
           <div className="tab-bar">
             <button
               className={`tab ${tab === "new-case" ? "active" : ""}`}
