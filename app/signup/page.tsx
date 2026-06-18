@@ -46,6 +46,17 @@ export default function SignupPage() {
       return;
     }
 
+    // Send welcome email
+    fetch("/api/send-email", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        type: "welcome",
+        to: email.trim(),
+        data: { clinicName: clinicName.trim() }
+      })
+    }).catch(console.error);
+
     setSuccess(true);
     setTimeout(() => router.push("/onboarding"), 1500);
     setLoading(false);
