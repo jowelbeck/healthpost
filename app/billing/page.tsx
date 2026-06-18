@@ -121,6 +121,24 @@ export default function BillingPage() {
 
     if (error) { setError(error.message); setSaving(false); return; }
 
+    // Send invoice email to owner
+    if (ownerName.trim()) {
+      fetch("/api/send-email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          type: "invoice",
+          to: ownerPhone.trim() || "clinic@vetsai.vet",
+          data: {
+            patientName: patientName.trim(),
+            ownerName: ownerName.trim(),
+            amount: total.toFixed(2),
+            currency,
+            services: services.filter(s => s.name.trim())
+          }
+        })
+      }).catch(console.error);
+    }
     setSuccessMsg("Invoice created successfully!");
     setTimeout(() => setSuccessMsg(""), 3000);
     setShowForm(false);
@@ -307,7 +325,9 @@ export default function BillingPage() {
         <div className="nav-links">
           <a href="/app" className="nav-link">New case</a>
           <a href="/patients" className="nav-link">Patients</a>
-          <a href="/team" className="nav-link">Team</a>
+          <a href="/team" className="nav-link">Team</a><a href="/billing" style={{ fontSize: 13, fontWeight: 500, color: "var(--slate-500)", textDecoration: "none", padding: "5px 10px", borderRadius: 6, background: "var(--slate-100)" }}>
+            💰 Billing
+            </a>
           <a href="/billing" className="nav-link active">Billing</a>
           <button className="btn-logout" onClick={async () => { await supabase.auth.signOut(); window.location.href = "/login"; }}>Log out</button>
         </div>
