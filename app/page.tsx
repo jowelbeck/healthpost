@@ -209,7 +209,7 @@ export default function LandingPage() {
           <a href="#modules">Platform</a>
           <a href="#how-it-works">How it works</a>
           <a href="#pricing">Pricing</a>
-          <a href="mailto:hi@vetsai.app">Book demo</a>
+          <a href="mailto:hi@vetsai.vet">Book demo</a>
           <a href="/signup" className="nav-cta">Start free →</a>
         </div>
       </nav>
@@ -233,7 +233,7 @@ export default function LandingPage() {
           </div>
           <div className="hero-actions">
             <a href="/signup" className="btn-primary">Start free trial →</a>
-            <a href="mailto:hi@vetsai.app" className="btn-outline">📅 Book a clinic demo</a>
+            <a href="mailto:hi@vetsai.vet" className="btn-outline">📅 Book a clinic demo</a>
           </div>
           <p className="hero-note">No credit card required · First 3 months free · Cancel anytime</p>
         </div>
@@ -471,7 +471,7 @@ export default function LandingPage() {
           </p>
           <div className="cta-actions">
             <a href="/signup" className="btn-primary">Start free trial →</a>
-            <a href="mailto:hi@vetsai.app" className="btn-outline">📅 Book a clinic demo</a>
+            <a href="mailto:hi@vetsai.vet" className="btn-outline">📅 Book a clinic demo</a>
           </div>
           <p style={{ marginTop: 20, fontSize: 12, color: "rgba(255,255,255,0.4)" }}>First 10 clinics get 3 months completely free</p>
         </div>
@@ -488,7 +488,7 @@ export default function LandingPage() {
           <a href="#how-it-works">How it works</a>
           <a href="#pricing">Pricing</a>
           <a href="/signup">Try free</a>
-          <a href="mailto:hi@vetsai.app">Contact</a>
+          <a href="mailto:hi@vetsai.vet">Contact</a>
         </div>
         <div style={{ fontSize: 12, color: "rgba(255,255,255,0.3)" }}>
           © {new Date().getFullYear()} VetsAI. Designed for veterinary professionals across Africa and beyond.
