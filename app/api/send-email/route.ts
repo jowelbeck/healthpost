@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+// Resend client initialized per request
 
 // ── Email templates ───────────────────────────────────────────────────────────
 
@@ -98,6 +98,7 @@ function invoiceEmail(patientName: string, ownerName: string, amount: string, cu
 // ── API Route ─────────────────────────────────────────────────────────────────
 
 export async function POST(req: NextRequest) {
+  const resend = new Resend(process.env.RESEND_API_KEY);
   try {
     const body = await req.json();
     const { type, to, data } = body;
