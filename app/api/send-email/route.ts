@@ -145,7 +145,8 @@ export async function POST(req: NextRequest) {
 
     const { data: result, error } = await resend.emails.send({
       from: "VetsAI <onboarding@resend.dev>",
-      to,
+      replyTo: to,
+      to: "jowelbeck@aol.com", // Resend free plan - only verified email
       subject,
       html,
     });
