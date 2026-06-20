@@ -62,7 +62,7 @@ const DEMO_RESULT = {
     plan:
       "Rest and activity restriction for 48 hours. Meloxicam at 0.1–0.2 mg/kg once daily if prescribed. Schedule orthopaedic examination within 24 hours.",
   },
-  sources: ["dog_limping.txt", "Merck Veterinary Manual p.1089"],
+  sources: ["dog_limping.txt", "Gold Standard Veterinary Research p.1089"],
   disclaimer: "This is not a substitute for professional veterinary advice.",
 };
 

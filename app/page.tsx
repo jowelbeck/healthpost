@@ -242,7 +242,7 @@ export default function LandingPage() {
       {/* Stats */}
       <div className="stats-bar">
         <div className="stats-inner">
-          <div className="stat"><div className="stat-num">3,367</div><div className="stat-label">Pages of Merck Vet Manual</div></div>
+          <div className="stat"><div className="stat-num">3,367+</div><div className="stat-label">Pages of Veterinary Research</div></div>
           <div className="stat"><div className="stat-num">&lt;60s</div><div className="stat-label">Time to full assessment</div></div>
           <div className="stat"><div className="stat-num">15+</div><div className="stat-label">Animal species supported</div></div>
           <div className="stat"><div className="stat-num">$0</div><div className="stat-label">To get started today</div></div>
@@ -279,7 +279,7 @@ export default function LandingPage() {
                 <li>Drug dosage guidance by species and weight — for clinician verification</li>
                 <li>Automatic urgency flagging for every case</li>
                 <li>Full patient history in one place</li>
-                <li>Powered by the Merck Veterinary Manual</li>
+                <li>Powered by the Gold Standard Veterinary Research</li>
               </ul>
             </div>
           </div>
@@ -382,7 +382,7 @@ export default function LandingPage() {
           <div className="steps">
             {[
               { num: "01", title: "Enter the case", desc: "Input the animal type, breed, age, weight and symptoms. The more detail, the more complete the clinical support." },
-              { num: "02", title: "Clinical support is generated", desc: "VetsAI searches the Merck Manual, checks drug dosages, triages urgency, and prepares a clinical summary — automatically." },
+              { num: "02", title: "Clinical support is generated", desc: "VetsAI searches the Veterinary Research Database, checks drug dosages, triages urgency, and prepares a clinical summary — automatically." },
               { num: "03", title: "Veterinarian reviews and acts", desc: "Your vet reviews the differential diagnoses, drug guidance, and SOAP note draft — then makes the clinical decision." },
               { num: "04", title: "Saved to patient records", desc: "Every case is automatically saved to the patient's history for full continuity of care across every visit." },
             ].map((s) => (
