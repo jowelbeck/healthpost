@@ -199,7 +199,7 @@ export default function QRPage() {
                 bgColor="#ffffff"
               />
             </div>
-            <div className="qr-url">{activeUrl}</div>
+            <a href={activeUrl} target="_blank" rel="noopener noreferrer" className="qr-url" style={{ textDecoration: "none" }}>{activeUrl} ↗</a>
             <div className="qr-desc">{showCustom ? "Custom link" : selected.desc}</div>
             <div className="qr-actions">
               <button className="btn-download" onClick={downloadQR}>⬇ Download PNG</button>
