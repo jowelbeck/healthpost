@@ -129,6 +129,10 @@ export default function Home() {
     placeholderWeight: lang === "fr" ? "12 kg" : "12 kg",
     placeholderSymptoms: lang === "fr" ? "Décrivez ce que vous avez observé — comportement, signes physiques, durée…" : "Describe what you've observed — behaviour, physical signs, duration…",
     placeholderSearch: lang === "fr" ? "Rechercher par animal, espèce ou symptômes…" : "Search by pet, animal, or symptoms…",
+    errorRequired: lang === "fr" ? "Le type d'animal et les symptômes sont obligatoires." : "Animal type and symptoms are required.",
+    errorFollowUp: lang === "fr" ? "Veuillez répondre aux questions de suivi." : "Please answer the follow-up questions.",
+    errorGeneral: lang === "fr" ? "Une erreur s'est produite." : t.errorGeneral,
+    successCleared: lang === "fr" ? "Historique des cas effacé." : "Case history cleared.",
   };
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
@@ -222,7 +226,7 @@ export default function Home() {
 
   const handleSubmit = async () => {
     if (!animal.trim() || !symptoms.trim()) {
-      setError("Animal type and symptoms are required.");
+      setError(t.errorRequired);
       return;
     }
     setLoading(true);
@@ -254,7 +258,7 @@ export default function Home() {
         setFollowUpAnswers("");
       }
     } catch (err) {
-      setError(err instanceof Error ? err.message : "Something went wrong.");
+      setError(err instanceof Error ? err.message : t.errorGeneral);
     } finally {
       setLoading(false);
     }
@@ -262,7 +266,7 @@ export default function Home() {
 
   const handleFollowUp = async () => {
     if (!followUpAnswers.trim()) {
-      setError("Please answer the follow-up questions.");
+      setError(t.errorFollowUp);
       return;
     }
     setLoading(true);
@@ -294,7 +298,7 @@ export default function Home() {
         setFollowUpQuestions(data.follow_up_questions ?? []);
       }
     } catch (err) {
-      setError(err instanceof Error ? err.message : "Something went wrong.");
+      setError(err instanceof Error ? err.message : t.errorGeneral);
     } finally {
       setLoading(false);
     }
@@ -347,7 +351,7 @@ export default function Home() {
     if (!window.confirm("Clear all case history?")) return;
     localStorage.removeItem("caseHistory");
     setCaseHistory([]);
-    setSuccessMessage("Case history cleared.");
+    setSuccessMessage(t.successCleared);
   };
 
   // ── Report generation ──────────────────────────────────────────────────────
