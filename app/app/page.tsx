@@ -693,13 +693,13 @@ export default function Home() {
               className={`tab ${tab === "new-case" ? "active" : ""}`}
               onClick={() => setTab("new-case")}
             >
-              New case
+              {t.newCase}
             </button>
             <button
               className={`tab ${tab === "history" ? "active" : ""}`}
               onClick={() => setTab("history")}
             >
-              Case history
+              {t.caseHistory}
             </button>
           </div>
         </header>
