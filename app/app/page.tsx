@@ -891,7 +891,7 @@ export default function Home() {
                 <div className="field-grid">
                   <div className="field">
                     <label>
-                      Animal type <span style={{ color: "var(--red-500)" }}>*</span>
+                      {t.animalType} <span style={{ color: "var(--red-500)" }}>*</span>
                     </label>
                     <input
                       placeholder="Dog, cat, rabbit…"
@@ -900,7 +900,7 @@ export default function Home() {
                     />
                   </div>
                   <div className="field">
-                    <label>Pet name</label>
+                    <label>{t.petName}</label>
                     <input
                       placeholder="Buddy"
                       value={petName}
@@ -908,7 +908,7 @@ export default function Home() {
                     />
                   </div>
                   <div className="field">
-                    <label>Breed</label>
+                    <label>{t.breed}</label>
                     <input
                       placeholder="Labrador, Persian…"
                       value={breed}
@@ -916,7 +916,7 @@ export default function Home() {
                     />
                   </div>
                   <div className="field">
-                    <label>Age</label>
+                    <label>{t.age}</label>
                     <input
                       placeholder="3 years"
                       value={age}
@@ -924,7 +924,7 @@ export default function Home() {
                     />
                   </div>
                   <div className="field">
-                    <label>Weight</label>
+                    <label>{t.weight}</label>
                     <input
                       placeholder="12 kg"
                       value={weight}
@@ -933,7 +933,7 @@ export default function Home() {
                   </div>
                   <div className="field field-full">
                     <label>
-                      Symptoms <span style={{ color: "var(--red-500)" }}>*</span>
+                      {t.symptoms} <span style={{ color: "var(--red-500)" }}>*</span>
                     </label>
                     <textarea
                       placeholder="Describe what you've observed — behaviour, physical signs, duration…"
