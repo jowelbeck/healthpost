@@ -131,7 +131,7 @@ export default function Home() {
     placeholderSearch: lang === "fr" ? "Rechercher par animal, espèce ou symptômes…" : "Search by pet, animal, or symptoms…",
     errorRequired: lang === "fr" ? "Le type d'animal et les symptômes sont obligatoires." : "Animal type and symptoms are required.",
     errorFollowUp: lang === "fr" ? "Veuillez répondre aux questions de suivi." : "Please answer the follow-up questions.",
-    errorGeneral: lang === "fr" ? "Une erreur s'est produite." : t.errorGeneral,
+    errorGeneral: lang === "fr" ? "Une erreur s'est produite." : "Something went wrong.",
     successCleared: lang === "fr" ? "Historique des cas effacé." : "Case history cleared.",
   };
   const [loading, setLoading] = useState(false);
