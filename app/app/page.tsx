@@ -112,6 +112,18 @@ export default function Home() {
     clear: lang === "fr" ? "Effacer" : "Clear",
     analyzing: lang === "fr" ? "⏳ Analyse en cours…" : "⏳ Analyzing…",
     logout: lang === "fr" ? "Déconnexion" : "Log out",
+    patients: lang === "fr" ? "Patients" : "Patients",
+    team: lang === "fr" ? "Équipe" : "Team",
+    appointments: lang === "fr" ? "Rendez-vous" : "Appointments",
+    billing: lang === "fr" ? "Facturation" : "Billing",
+    analytics: lang === "fr" ? "Analytique" : "Analytics",
+    qr: lang === "fr" ? "QR" : "QR",
+    patients: lang === "fr" ? "Patients" : "Patients",
+    team: lang === "fr" ? "Équipe" : "Team",
+    appointments: lang === "fr" ? "Rendez-vous" : "Appointments",
+    billing: lang === "fr" ? "Facturation" : "Billing",
+    analytics: lang === "fr" ? "Analytique" : "Analytics",
+    qr: lang === "fr" ? "QR" : "QR",
   };
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
@@ -650,7 +662,7 @@ export default function Home() {
       padding: "5px 10px",
     }}
       >
-        📁 Patients
+        📁 {t.patients}
       </a>
 
       <a
@@ -663,10 +675,10 @@ export default function Home() {
           padding: "5px 10px",
         }}
       >
-        👥 Team
+        👥 {t.team}
             </a>
           <a href="/appointments" style={{ fontSize: 13, fontWeight: 500, color: "var(--slate-500)", textDecoration: "none", padding: "5px 10px", borderRadius: 6, background: "var(--slate-100)" }}>
-            📅 Appointments
+            📅 {t.appointments}
       </a>
 
       <a
@@ -679,14 +691,14 @@ export default function Home() {
           padding: "5px 10px",
         }}
       >
-        💳 Billing
+        💳 {t.billing}
             </a>
           <a href="/qr" style={{ fontSize: 13, fontWeight: 500, color: "var(--slate-500)", textDecoration: "none", padding: "5px 10px", borderRadius: 6, background: "var(--slate-100)" }}>
-            📱 QR
+            📱 {t.qr}
       </a>
     </div>
           <a href="/analytics" style={{ fontSize: 13, fontWeight: 500, color: "var(--slate-500)", textDecoration: "none", padding: "5px 10px", borderRadius: 6, background: "var(--slate-100)" }}>
-            📊 Analytics
+            📊 {t.analytics}
           </a>
           <div className="tab-bar">
             <button
