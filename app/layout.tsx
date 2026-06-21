@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "VetsAI — Clinical Decision Support",
-  description: "AI-powered veterinary assistant powered by the Merck Veterinary Manual",
+  description: "VetsAI — The AI-powered clinic operating system for veterinary professionals worldwide.",
 };
 
 export default function RootLayout({
