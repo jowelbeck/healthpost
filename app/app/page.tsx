@@ -97,6 +97,38 @@ export default function Home() {
 
   // UI state
   const [tab, setTab] = useState<Tab>("new-case");
+  const [lang, setLang] = useState<"en" | "fr">("en");
+  const t = {
+    newCase: lang === "fr" ? "Nouveau cas" : {t.newCase},
+    caseHistory: lang === "fr" ? "Historique" : {t.caseHistory},
+    patientInfo: lang === "fr" ? "Informations patient" : "Patient information",
+    animalType: lang === "fr" ? "Type d'animal" : "Animal type",
+    petName: lang === "fr" ? "Nom de l'animal" : {t.petName},
+    breed: lang === "fr" ? "Race" : {t.breed},
+    age: lang === "fr" ? "Âge" : {t.age},
+    weight: lang === "fr" ? "Poids" : {t.weight},
+    symptoms: lang === "fr" ? "Symptômes" : "Symptoms",
+    analyzeCase: lang === "fr" ? "Analyser le cas" : {t.analyzeCase},
+    clear: lang === "fr" ? "Effacer" : {t.clear},
+    analyzing: lang === "fr" ? "⏳ Analyse en cours…" : {t.analyzing},
+    logout: lang === "fr" ? "Déconnexion" : "Log out",
+  };
+  const [lang, setLang] = useState<"en" | "fr">("en");
+  const t = {
+    newCase: lang === "fr" ? "Nouveau cas" : {t.newCase},
+    caseHistory: lang === "fr" ? "Historique" : {t.caseHistory},
+    patientInfo: lang === "fr" ? "Informations patient" : "Patient information",
+    animalType: lang === "fr" ? "Type d'animal" : "Animal type",
+    petName: lang === "fr" ? "Nom de l'animal" : {t.petName},
+    breed: lang === "fr" ? "Race" : {t.breed},
+    age: lang === "fr" ? "Âge" : {t.age},
+    weight: lang === "fr" ? "Poids" : {t.weight},
+    symptoms: lang === "fr" ? "Symptômes" : "Symptoms",
+    analyzeCase: lang === "fr" ? "Analyser le cas" : {t.analyzeCase},
+    clear: lang === "fr" ? "Effacer" : {t.clear},
+    analyzing: lang === "fr" ? "⏳ Analyse en cours…" : {t.analyzing},
+    logout: lang === "fr" ? "Déconnexion" : "Log out",
+  };
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
@@ -743,9 +775,9 @@ export default function Home() {
                   {[
                     ["Name", petName],
                     ["Animal", animal],
-                    ["Breed", breed],
-                    ["Age", age],
-                    ["Weight", weight],
+                    [{t.breed}, breed],
+                    [{t.age}, age],
+                    [{t.weight}, weight],
                   ].map(([label, val]) => (
                     <div className="pet-field" key={label}>
                       <strong>{label}</strong>
@@ -865,7 +897,7 @@ export default function Home() {
             {/* Main form — hide when waiting for follow-up answers */}
             {!caseId && (
               <div className="card">
-                <div className="card-title">Patient information</div>
+                <div className="card-title">{t.patientInfo}</div>
                 <div className="field-grid">
                   <div className="field">
                     <label>
@@ -926,7 +958,7 @@ export default function Home() {
                     onClick={handleSubmit}
                     disabled={loading}
                   >
-                    {loading ? "⏳ Analyzing…" : "Analyze case"}
+                    {loading ? {t.analyzing} : {t.analyzeCase}}
                   </button>
                   <button className="btn btn-secondary" onClick={resetForm}>
                     Clear
@@ -1074,9 +1106,9 @@ export default function Home() {
                             {[
                               ["Name", item.petName],
                               ["Animal", item.animal],
-                              ["Breed", item.breed],
-                              ["Age", item.age],
-                              ["Weight", item.weight],
+                              [{t.breed}, item.breed],
+                              [{t.age}, item.age],
+                              [{t.weight}, item.weight],
                             ].map(([label, val]) => (
                               <div className="pet-field" key={label}>
                                 <strong>{label}</strong>
