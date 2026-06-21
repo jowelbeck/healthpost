@@ -118,6 +118,10 @@ export default function Home() {
     billing: lang === "fr" ? "Facturation" : "Billing",
     analytics: lang === "fr" ? "Analytique" : "Analytics",
     qr: lang === "fr" ? "QR" : "QR",
+    totalCases: lang === "fr" ? "Total des cas" : "Total cases",
+    high: lang === "fr" ? "Élevée" : "High",
+    medium: lang === "fr" ? "Moyenne" : "Medium",
+    low: lang === "fr" ? "Faible" : "Low",
   };
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
@@ -713,19 +717,19 @@ export default function Home() {
         {/* ── Stats ── */}
         <div className="stats">
           <div className="stat-card">
-            <div className="stat-label">Total cases</div>
+            <div className="stat-label">{t.totalCases}</div>
             <div className="stat-value">{totalCases}</div>
           </div>
           <div className="stat-card high">
-            <div className="stat-label">🔴 High</div>
+            <div className="stat-label">🔴 {t.high}</div>
             <div className="stat-value">{highCases}</div>
           </div>
           <div className="stat-card medium">
-            <div className="stat-label">🟠 Medium</div>
+            <div className="stat-label">🟠 {t.medium}</div>
             <div className="stat-value">{mediumCases}</div>
           </div>
           <div className="stat-card low">
-            <div className="stat-label">🟢 Low</div>
+            <div className="stat-label">🟢 {t.low}</div>
             <div className="stat-value">{lowCases}</div>
           </div>
         </div>
