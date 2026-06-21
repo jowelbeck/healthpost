@@ -765,9 +765,9 @@ export default function Home() {
                   {[
                     ["Name", petName],
                     ["Animal", animal],
-                    [{t.breed}, breed],
-                    [{t.age}, age],
-                    [{t.weight}, weight],
+                    ["Breed", breed],
+                    ["Age", age],
+                    ["Weight", weight],
                   ].map(([label, val]) => (
                     <div className="pet-field" key={label}>
                       <strong>{label}</strong>
@@ -948,7 +948,7 @@ export default function Home() {
                     onClick={handleSubmit}
                     disabled={loading}
                   >
-                    {loading ? {t.analyzing} : {t.analyzeCase}}
+                    {loading ? t.analyzing : t.analyzeCase}
                   </button>
                   <button className="btn btn-secondary" onClick={resetForm}>
                     Clear
@@ -1096,9 +1096,9 @@ export default function Home() {
                             {[
                               ["Name", item.petName],
                               ["Animal", item.animal],
-                              [{t.breed}, item.breed],
-                              [{t.age}, item.age],
-                              [{t.weight}, item.weight],
+                              ["Breed", item.breed],
+                              ["Age", item.age],
+                              ["Weight", item.weight],
                             ].map(([label, val]) => (
                               <div className="pet-field" key={label}>
                                 <strong>{label}</strong>
