@@ -465,6 +465,13 @@ export default function LandingPage() {
       {/* CTA */}
       <section className="cta-bg">
         <div className="section-inner">
+          <div style={{ display: "flex", flexDirection: "column", alignItems: "center", marginBottom: 28 }}>
+            <div style={{ background: "#fff", padding: 16, borderRadius: 12, display: "inline-block", marginBottom: 10 }}>
+              <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://vetsai.vet&color=1a3d2b" alt="VetsAI QR Code" width={120} height={120} style={{ display: "block" }} />
+            </div>
+            <a href="https://vetsai.vet" style={{ color: "#fff", fontWeight: 700, fontSize: 15, letterSpacing: 0.5, textDecoration: "none", background: "rgba(255,255,255,0.15)", padding: "6px 16px", borderRadius: 20, border: "1px solid rgba(255,255,255,0.3)" }}>vetsai.vet</a>
+            <p style={{ fontSize: 12, color: "rgba(255,255,255,0.5)", marginTop: 6 }}>Scan or click to visit</p>
+          </div>
           <div className="eyebrow" style={{ color: "rgba(255,255,255,0.6)" }}>Get started today</div>
           <h2 className="section-title">Ready to run a smarter clinic?</h2>
           <p className="cta-sub">
