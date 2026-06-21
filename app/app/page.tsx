@@ -99,24 +99,8 @@ export default function Home() {
   const [tab, setTab] = useState<Tab>("new-case");
   const [lang, setLang] = useState<"en" | "fr">("en");
   const t = {
-    newCase: lang === "fr" ? "Nouveau cas" : {t.newCase},
-    caseHistory: lang === "fr" ? "Historique" : {t.caseHistory},
-    patientInfo: lang === "fr" ? "Informations patient" : "Patient information",
-    animalType: lang === "fr" ? "Type d'animal" : "Animal type",
-    petName: lang === "fr" ? "Nom de l'animal" : "Pet name",
-    breed: lang === "fr" ? "Race" : "Breed",
-    age: lang === "fr" ? "Âge" : "Age",
-    weight: lang === "fr" ? "Poids" : "Weight",
-    symptoms: lang === "fr" ? "Symptômes" : "Symptoms",
-    analyzeCase: lang === "fr" ? "Analyser le cas" : "Analyze case",
-    clear: lang === "fr" ? "Effacer" : "Clear",
-    analyzing: lang === "fr" ? "⏳ Analyse en cours…" : "⏳ Analyzing…",
-    logout: lang === "fr" ? "Déconnexion" : "Log out",
-  };
-  const [lang, setLang] = useState<"en" | "fr">("en");
-  const t = {
-    newCase: lang === "fr" ? "Nouveau cas" : {t.newCase},
-    caseHistory: lang === "fr" ? "Historique" : {t.caseHistory},
+    newCase: lang === "fr" ? "Nouveau cas" : "New case",
+    caseHistory: lang === "fr" ? "Historique" : "Case history",
     patientInfo: lang === "fr" ? "Informations patient" : "Patient information",
     animalType: lang === "fr" ? "Type d'animal" : "Animal type",
     petName: lang === "fr" ? "Nom de l'animal" : "Pet name",
@@ -641,6 +625,12 @@ export default function Home() {
               }}
             >
               Log out
+            </button>
+            <button
+              onClick={() => setLang(lang === "en" ? "fr" : "en")}
+              style={{ fontSize: 12, padding: "5px 10px", background: "var(--slate-100)", border: "1px solid var(--slate-200)", borderRadius: 6, cursor: "pointer", fontFamily: "inherit" }}
+            >
+              {lang === "en" ? "🇫🇷 FR" : "🇬🇧 EN"}
             </button>
             </div>
           </div>
