@@ -133,6 +133,7 @@ export default function Home() {
     errorFollowUp: lang === "fr" ? "Veuillez répondre aux questions de suivi." : "Please answer the follow-up questions.",
     errorGeneral: lang === "fr" ? "Une erreur s'est produite." : "Something went wrong.",
     successCleared: lang === "fr" ? "Historique des cas effacé." : "Case history cleared.",
+    startNewCase: lang === "fr" ? "＋ Nouveau cas" : "＋ Start new case",
   };
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
@@ -982,7 +983,7 @@ export default function Home() {
 
             {(result || caseId) && (
               <button className="btn btn-secondary" onClick={resetForm}>
-                ＋ Start new case
+                {t.startNewCase}
               </button>
             )}
           </>
