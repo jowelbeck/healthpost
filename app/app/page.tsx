@@ -434,7 +434,7 @@ export default function Home() {
 </head>
 <body>
   <div class="header">
-    <div class="logo">🐾 VetsAI<span>Clinical Decision Support</span></div>
+    <div class="logo"><img src="/vetsai-icon.svg" alt="VetsAI" width="28" height="28" style="border-radius:6px;vertical-align:middle;margin-right:8px;"> VetsAI<span>Clinic Operating System</span></div>
     <div class="report-date">Case Report<br/>${date}</div>
   </div>
 
@@ -649,7 +649,7 @@ export default function Home() {
         {/* ── Header ── */}
         <header className="header">
           <div className="header-left">
-            <div className="logo-mark">🐾</div>
+            <img src="/vetsai-icon.svg" alt="VetsAI" width={40} height={40} style={{ borderRadius: "10px", flexShrink: 0 }} />
             <div>
               <h1>VetsAI</h1>
               <div className="header-sub">Clinical decision support</div><button

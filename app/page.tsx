@@ -202,7 +202,7 @@ export default function LandingPage() {
       {/* Nav */}
       <nav>
         <a href="/" className="nav-logo">
-          <div className="nav-logo-mark">🐾</div>
+          <img src="/vetsai-icon.svg" alt="VetsAI" width={36} height={36} style={{ borderRadius: "9px" }} />
           <span className="nav-logo-text">VetsAI</span>
         </a>
         <div className="nav-links">
@@ -497,7 +497,7 @@ export default function LandingPage() {
       {/* Footer */}
       <footer>
         <div style={{ marginBottom: 12 }}>
-          <span style={{ color: "rgba(255,255,255,0.9)", fontWeight: 600 }}>🐾 VetsAI</span>
+          <span style={{ display: "flex", alignItems: "center", gap: "8px", color: "rgba(255,255,255,0.9)", fontWeight: 600 }}><img src="/vetsai-icon.svg" alt="VetsAI" width={24} height={24} style={{ borderRadius: "6px" }} /> VetsAI</span>
           &nbsp;·&nbsp; Clinic operating system for veterinary professionals worldwide
         </div>
         <div style={{ display: "flex", gap: 20, justifyContent: "center", flexWrap: "wrap", marginBottom: 16 }}>
