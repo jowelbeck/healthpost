@@ -14,6 +14,13 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  icons: {
+    icon: [
+      { url: "/icon.svg", type: "image/svg+xml" },
+    ],
+    shortcut: "/icon.svg",
+    apple: "/icon.svg",
+  },
   title: "VetsAI — Clinical Decision Support",
   description: "VetsAI — The AI-powered clinic operating system for veterinary professionals worldwide.",
 };
