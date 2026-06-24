@@ -142,7 +142,7 @@ export default function FrenchLandingPage() {
       {/* Nav */}
       <nav>
         <a href="/fr" className="nav-logo">
-          <div className="nav-logo-mark">🐾</div>
+          <img src="/vetsai-icon.svg" alt="VetsAI" width={36} height={36} style={{ borderRadius: "9px" }} />
           <span className="nav-logo-text">VetsAI</span>
         </a>
         <div className="nav-links">
