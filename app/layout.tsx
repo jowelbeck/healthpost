@@ -20,7 +20,28 @@ export const metadata: Metadata = {
     apple: "/vetsai-icon.svg",
   },
   title: "VetsAI — Clinic Operating System",
-  description: "VetsAI — The AI-powered clinic operating system for veterinary professionals across Africa and beyond.",
+  description: "AI-powered clinic operating system for veterinary professionals across Africa and beyond.",
+  openGraph: {
+    title: "VetsAI — Clinic Operating System",
+    description: "AI-powered clinical support, patient records and practice management for vets across Africa.",
+    url: "https://vet-ui-beta.vercel.app",
+    siteName: "VetsAI",
+    images: [
+      {
+        url: "https://vet-ui-beta.vercel.app/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "VetsAI — Clinic Operating System",
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "VetsAI — Clinic Operating System",
+    description: "AI-powered clinic operating system for veterinary professionals across Africa.",
+    images: ["https://vet-ui-beta.vercel.app/og-image.png"],
+  },
 };
 
 export default function RootLayout({
