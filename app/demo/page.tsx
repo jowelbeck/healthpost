@@ -223,7 +223,7 @@ export default function DemoPage() {
       {/* App Header */}
       <div className="app-header">
         <div className="app-logo">
-          <div className="app-logo-mark">🐾</div>
+          <img src="/vetsai-icon.svg" alt="VetsAI" width={30} height={30} style={{ borderRadius: "7px" }} />
           VetsAI
         </div>
         <div className="tab-bar">

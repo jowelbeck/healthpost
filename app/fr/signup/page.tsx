@@ -72,7 +72,7 @@ export default function FrenchSignupPage() {
 
       <div className="page">
         <a href="/fr" className="logo">
-          <div className="logo-mark">🐾</div>
+          <img src="/vetsai-icon.svg" alt="VetsAI" width={40} height={40} style={{ borderRadius: "10px" }} />
           <span className="logo-text">VetsAI</span>
         </a>
         <div className="card">

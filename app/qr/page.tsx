@@ -122,7 +122,7 @@ export default function QRPage() {
 
       <div className="app-header">
         <a href="/app" className="app-logo">
-          <div className="app-logo-mark">🐾</div>
+          <img src="/vetsai-icon.svg" alt="VetsAI" width={30} height={30} style={{ borderRadius: "7px" }} />
           VetsAI
         </a>
         <div style={{ display: "flex", gap: 8 }}>
