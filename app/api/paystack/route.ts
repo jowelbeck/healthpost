@@ -57,6 +57,7 @@ export async function POST(request: NextRequest) {
     console.log("Resolved plan name:", planName);
 
     const { data: users, error: usersError } = await supabase.auth.admin.listUsers();
+    console.log("Users fetched:", users?.users?.length, "error:", JSON.stringify(usersError));
     console.log("Users error:", usersError);
     console.log("Total users:", users?.users?.length);
 
@@ -80,9 +81,12 @@ export async function POST(request: NextRequest) {
       ends_at: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000).toISOString(),
     }, { onConflict: "user_id" });
 
-    console.log("Upsert error:", upsertError);
-    console.log("Subscription saved successfully");
-  }
+    if (upsertError) {
+    console.log("UPSERT FAILED:", JSON.stringify(upsertError));
+    } else {
+    console.log("Subscription saved successfully for user:", user.id);
+    }
+    }
 
   if (eventType === "subscription.disable") {
     const email = data.customer?.email;
