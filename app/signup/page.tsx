@@ -66,11 +66,11 @@ export default function SignupPage() {
         body { font-family: system-ui, -apple-system, sans-serif; background: #f1f5f9; color: #1e293b; }
         .page { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 24px; }
         .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; margin-bottom: 32px; }
-        .logo-mark { width: 40px; height: 40px; background: #1a3d2b; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 20px; }
-        .logo-text { font-size: 20px; font-weight: 700; color: #1a3d2b; }
+        .logo-mark { width: 40px; height: 40px; background: #1a3556; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 20px; }
+        .logo-text { font-size: 20px; font-weight: 700; color: #1a3556; }
         .card { background: #fff; border: 1px solid #e2e8f0; border-radius: 14px; padding: 32px; width: 100%; max-width: 420px; box-shadow: 0 4px 12px rgba(0,0,0,0.06); }
-        .free-badge { background: #f0faf4; border: 1px solid #d4f0e0; color: #1a3d2b; font-size: 12px; font-weight: 600; padding: 6px 14px; border-radius: 20px; display: inline-block; margin-bottom: 20px; text-align: center; width: 100%; }
-        .card-title { font-size: 22px; font-weight: 700; color: #1a3d2b; margin-bottom: 6px; }
+        .free-badge { background: #f0faf4; border: 1px solid #d4f0e0; color: #1a3556; font-size: 12px; font-weight: 600; padding: 6px 14px; border-radius: 20px; display: inline-block; margin-bottom: 20px; text-align: center; width: 100%; }
+        .card-title { font-size: 22px; font-weight: 700; color: #1a3556; margin-bottom: 6px; }
         .card-sub { font-size: 14px; color: #64748b; margin-bottom: 24px; }
         .btn-google { width: 100%; background: #fff; color: #334155; padding: 11px; border-radius: 8px; border: 1.5px solid #e2e8f0; font-size: 14px; font-weight: 600; cursor: pointer; font-family: inherit; display: flex; align-items: center; justify-content: center; gap: 10px; transition: all 0.15s; margin-bottom: 16px; }
         .btn-google:hover { background: #f8fafc; border-color: #cbd5e1; }
@@ -81,29 +81,29 @@ export default function SignupPage() {
         .field { display: flex; flex-direction: column; gap: 5px; margin-bottom: 14px; }
         .field label { font-size: 12px; font-weight: 600; color: #64748b; text-transform: uppercase; letter-spacing: 0.4px; }
         .field input { padding: 10px 14px; border: 1px solid #e2e8f0; border-radius: 8px; font-size: 14px; color: #1e293b; background: #f8fafc; outline: none; font-family: inherit; transition: border-color 0.15s; }
-        .field input:focus { border-color: #1a3d2b; box-shadow: 0 0 0 3px rgba(26,61,43,0.1); background: #fff; }
-        .btn-signup { width: 100%; background: #1a3d2b; color: #fff; padding: 12px; border-radius: 8px; border: none; font-size: 15px; font-weight: 600; cursor: pointer; font-family: inherit; margin-top: 6px; transition: background 0.15s; }
-        .btn-signup:hover { background: #2d6b47; }
+        .field input:focus { border-color: #1a3556; box-shadow: 0 0 0 3px rgba(26,61,43,0.1); background: #fff; }
+        .btn-signup { width: 100%; background: #1a3556; color: #fff; padding: 12px; border-radius: 8px; border: none; font-size: 15px; font-weight: 600; cursor: pointer; font-family: inherit; margin-top: 6px; transition: background 0.15s; }
+        .btn-signup:hover { background: #2d5f8a; }
         .btn-signup:disabled { opacity: 0.5; cursor: not-allowed; }
         .error { background: #fef2f2; border: 1px solid #fecaca; color: #dc2626; padding: 10px 14px; border-radius: 8px; font-size: 13px; margin-bottom: 14px; }
-        .success { background: #f0faf4; border: 1px solid #d4f0e0; color: #1a3d2b; padding: 16px; border-radius: 8px; font-size: 14px; text-align: center; }
+        .success { background: #f0faf4; border: 1px solid #d4f0e0; color: #1a3556; padding: 16px; border-radius: 8px; font-size: 14px; text-align: center; }
         .success h3 { font-size: 16px; font-weight: 700; margin-bottom: 6px; }
         .footer-links { text-align: center; margin-top: 16px; font-size: 13px; color: #94a3b8; }
-        .link { color: #1a3d2b; font-weight: 600; text-decoration: none; }
+        .link { color: #1a3556; font-weight: 600; text-decoration: none; }
         .trust-row { display: flex; gap: 16px; justify-content: center; margin-top: 20px; flex-wrap: wrap; }
         .trust-item { font-size: 12px; color: #94a3b8; display: flex; align-items: center; gap: 4px; }
       `}</style>
 
       <div className="page">
         <a href="/" className="logo">
-          <img src="/vetsai-icon.svg" alt="VetsAI" width={40} height={40} style={{ borderRadius: "10px" }} />
-          <span className="logo-text">VetsAI</span>
+          <img src="/healthpost-icon.svg" alt="Healthpost" width={40} height={40} style={{ borderRadius: "10px" }} />
+          <span className="logo-text">Healthpost</span>
         </a>
 
         <div className="card">
           <div className="free-badge">🎉 3 months free — no credit card required</div>
           <div className="card-title">Start your free trial</div>
-          <div className="card-sub">Join veterinary professionals using VetsAI worldwide.</div>
+          <div className="card-sub">Join medical professionals using Healthpost worldwide.</div>
 
           {success ? (
             <div className="success">

@@ -6,7 +6,7 @@ const supabase = createClient(
   process.env.SUPABASE_SERVICE_ROLE_KEY!
 );
 
-const BASE_URL = "https://vet-ui-beta.vercel.app";
+const BASE_URL = "https://healthpost-nine.vercel.app";
 
 async function sendSequenceEmail(email: string, type: string, clinicName: string) {
   await fetch(`${BASE_URL}/api/send-email`, {

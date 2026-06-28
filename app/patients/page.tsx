@@ -18,7 +18,7 @@ type Patient = {
 
 function animalEmoji(a?: string) {
   const m: Record<string, string> = { dog: "🐕", cat: "🐈", rabbit: "🐇", horse: "🐴", bird: "🐦", goat: "🐐", cow: "🐄" };
-  return m[a?.toLowerCase() ?? ""] ?? "🐾";
+  return m[a?.toLowerCase() ?? ""] ?? "🏥";
 }
 
 function cap(s?: string) {
@@ -119,32 +119,32 @@ export default function PatientsPage() {
 
         /* Header */
         .app-header { background: #fff; border-bottom: 1px solid #e2e8f0; padding: 0 20px; display: flex; align-items: center; justify-content: space-between; height: 56px; position: sticky; top: 0; z-index: 50; }
-        .app-logo { display: flex; align-items: center; gap: 8px; font-size: 16px; font-weight: 700; color: #1a3d2b; text-decoration: none; }
-        .app-logo-mark { width: 30px; height: 30px; background: #1a3d2b; border-radius: 7px; display: flex; align-items: center; justify-content: center; font-size: 15px; }
+        .app-logo { display: flex; align-items: center; gap: 8px; font-size: 16px; font-weight: 700; color: #1a3556; text-decoration: none; }
+        .app-logo-mark { width: 30px; height: 30px; background: #1a3556; border-radius: 7px; display: flex; align-items: center; justify-content: center; font-size: 15px; }
         .nav-links { display: flex; align-items: center; gap: 16px; }
         .nav-link { font-size: 13px; font-weight: 500; color: #64748b; text-decoration: none; padding: 5px 10px; border-radius: 6px; transition: all 0.15s; }
         .nav-link:hover { background: #f1f5f9; color: #1e293b; }
-        .nav-link.active { background: #f0faf4; color: #1a3d2b; font-weight: 600; }
+        .nav-link.active { background: #f0faf4; color: #1a3556; font-weight: 600; }
         .btn-logout { font-size: 12px; padding: 6px 12px; background: #f1f5f9; border: 1px solid #e2e8f0; border-radius: 6px; cursor: pointer; color: #64748b; font-family: inherit; }
 
         /* Body */
         .page-body { max-width: 860px; margin: 0 auto; padding: 24px 16px 48px; }
         .page-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; flex-wrap: wrap; gap: 12px; }
-        .page-title { font-size: 20px; font-weight: 700; color: #1a3d2b; }
-        .btn-add { background: #1a3d2b; color: #fff; padding: 9px 18px; border-radius: 8px; border: none; font-size: 13px; font-weight: 600; cursor: pointer; font-family: inherit; display: flex; align-items: center; gap: 6px; }
-        .btn-add:hover { background: #2d6b47; }
+        .page-title { font-size: 20px; font-weight: 700; color: #1a3556; }
+        .btn-add { background: #1a3556; color: #fff; padding: 9px 18px; border-radius: 8px; border: none; font-size: 13px; font-weight: 600; cursor: pointer; font-family: inherit; display: flex; align-items: center; gap: 6px; }
+        .btn-add:hover { background: #2d5f8a; }
 
         /* Search */
         .search-wrap { position: relative; margin-bottom: 16px; }
         .search-wrap input { width: 100%; padding: 9px 12px 9px 36px; border: 1px solid #e2e8f0; border-radius: 8px; font-size: 14px; background: #fff; outline: none; font-family: inherit; }
-        .search-wrap input:focus { border-color: #1a3d2b; box-shadow: 0 0 0 3px rgba(26,61,43,0.1); }
+        .search-wrap input:focus { border-color: #1a3556; box-shadow: 0 0 0 3px rgba(26,61,43,0.1); }
         .search-icon { position: absolute; left: 11px; top: 50%; transform: translateY(-50%); color: #94a3b8; font-size: 15px; pointer-events: none; }
         .search-meta { font-size: 12px; color: #94a3b8; margin-bottom: 12px; }
 
         /* Alerts */
         .alert { border-radius: 8px; padding: 10px 14px; margin-bottom: 14px; font-size: 13px; }
         .alert-error { background: #fef2f2; border: 1px solid #fecaca; color: #dc2626; }
-        .alert-success { background: #f0faf4; border: 1px solid #d4f0e0; color: #1a3d2b; }
+        .alert-success { background: #f0faf4; border: 1px solid #d4f0e0; color: #1a3556; }
 
         /* Form card */
         .card { background: #fff; border: 1px solid #e2e8f0; border-radius: 10px; padding: 20px; margin-bottom: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
@@ -153,9 +153,9 @@ export default function PatientsPage() {
         .field { display: flex; flex-direction: column; gap: 5px; }
         .field label { font-size: 11px; font-weight: 600; color: #64748b; text-transform: uppercase; letter-spacing: 0.4px; }
         .field input, .field select { padding: 9px 12px; border: 1px solid #e2e8f0; border-radius: 6px; font-size: 14px; color: #1e293b; background: #f8fafc; outline: none; font-family: inherit; transition: border-color 0.15s; }
-        .field input:focus, .field select:focus { border-color: #1a3d2b; box-shadow: 0 0 0 3px rgba(26,61,43,0.1); background: #fff; }
+        .field input:focus, .field select:focus { border-color: #1a3556; box-shadow: 0 0 0 3px rgba(26,61,43,0.1); background: #fff; }
         .btn-row { display: flex; gap: 8px; margin-top: 16px; }
-        .btn-save { background: #1a3d2b; color: #fff; padding: 9px 18px; border-radius: 7px; border: none; font-size: 13px; font-weight: 600; cursor: pointer; font-family: inherit; }
+        .btn-save { background: #1a3556; color: #fff; padding: 9px 18px; border-radius: 7px; border: none; font-size: 13px; font-weight: 600; cursor: pointer; font-family: inherit; }
         .btn-save:disabled { opacity: 0.5; cursor: not-allowed; }
         .btn-cancel { background: #fff; color: #64748b; padding: 9px 18px; border-radius: 7px; border: 1px solid #e2e8f0; font-size: 13px; font-weight: 600; cursor: pointer; font-family: inherit; }
 
@@ -168,7 +168,7 @@ export default function PatientsPage() {
         .patient-name { font-size: 14px; font-weight: 600; color: #1e293b; }
         .patient-meta { font-size: 12px; color: #94a3b8; margin-top: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
         .patient-actions { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
-        .btn-analyze { background: #1a3d2b; color: #fff; font-size: 12px; font-weight: 600; padding: 5px 12px; border-radius: 6px; border: none; cursor: pointer; font-family: inherit; text-decoration: none; display: inline-flex; align-items: center; }
+        .btn-analyze { background: #1a3556; color: #fff; font-size: 12px; font-weight: 600; padding: 5px 12px; border-radius: 6px; border: none; cursor: pointer; font-family: inherit; text-decoration: none; display: inline-flex; align-items: center; }
         .btn-delete { background: #fff; color: #dc2626; border: 1px solid #fecaca; font-size: 12px; padding: 5px 10px; border-radius: 6px; cursor: pointer; font-family: inherit; }
         .patient-body { padding: 0 16px 16px; border-top: 1px solid #f1f5f9; }
         .patient-detail-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 10px; margin-top: 14px; background: #f8fafc; border-radius: 8px; padding: 12px; }
@@ -190,8 +190,8 @@ export default function PatientsPage() {
       {/* Header */}
       <div className="app-header">
         <a href="/app" className="app-logo">
-          <img src="/vetsai-icon.svg" alt="VetsAI" width={30} height={30} style={{ borderRadius: "7px" }} />
-          VetsAI
+          <img src="/healthpost-icon.svg" alt="Healthpost" width={30} height={30} style={{ borderRadius: "7px" }} />
+          Healthpost
         </a>
         <div className="nav-links">
           <a href="/app" className="nav-link">New case</a>

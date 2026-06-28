@@ -15,32 +15,32 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   icons: {
-    icon: [{ url: "/vetsai-icon.svg", type: "image/svg+xml" }],
-    shortcut: "/vetsai-icon.svg",
-    apple: "/vetsai-icon.svg",
+    icon: [{ url: "/healthpost-icon.svg", type: "image/svg+xml" }],
+    shortcut: "/healthpost-icon.svg",
+    apple: "/healthpost-icon.svg",
   },
-  title: "VetsAI — Clinic Operating System",
-  description: "AI-powered clinic operating system for veterinary professionals across Africa and beyond.",
+  title: "Healthpost — Hospital Operating System",
+  description: "AI-powered hospital operating system for medical professionals across Africa and beyond.",
   openGraph: {
-    title: "VetsAI — Clinic Operating System",
+    title: "Healthpost — Hospital Operating System",
     description: "AI-powered clinical support, patient records and practice management for vets across Africa.",
-    url: "https://vetsai.vet",
-    siteName: "VetsAI",
+    url: "https://healthpost.africa",
+    siteName: "Healthpost",
     images: [
       {
-        url: "https://vetsai.vet/og-image.png",
+        url: "https://healthpost.africa/og-image.png",
         width: 1200,
         height: 630,
-        alt: "VetsAI — Clinic Operating System",
+        alt: "Healthpost — Hospital Operating System",
       },
     ],
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "VetsAI — Clinic Operating System",
-    description: "AI-powered clinic operating system for veterinary professionals across Africa.",
-    images: ["https://vetsai.vet/og-image.png"],
+    title: "Healthpost — Hospital Operating System",
+    description: "AI-powered hospital operating system for medical professionals across Africa.",
+    images: ["https://healthpost.africa/og-image.png"],
   },
 };
 

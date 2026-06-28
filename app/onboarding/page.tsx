@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import { supabase } from "@/lib/supabase";
 
 const STEPS = [
-  { id: 1, title: "Welcome to VetsAI", icon: "🐾" },
+  { id: 1, title: "Welcome to Healthpost", icon: "🏥" },
   { id: 2, title: "Set up your clinic", icon: "🏥" },
   { id: 3, title: "Add your first patient", icon: "🐕" },
   { id: 4, title: "You're ready!", icon: "🎉" },
@@ -79,34 +79,34 @@ export default function OnboardingPage() {
         body { font-family: system-ui, -apple-system, sans-serif; background: #f1f5f9; color: #1e293b; }
         .page { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 24px; }
         .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; margin-bottom: 32px; }
-        .logo-mark { width: 40px; height: 40px; background: #1a3d2b; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 20px; }
-        .logo-text { font-size: 20px; font-weight: 700; color: #1a3d2b; }
+        .logo-mark { width: 40px; height: 40px; background: #1a3556; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 20px; }
+        .logo-text { font-size: 20px; font-weight: 700; color: #1a3556; }
 
         /* Progress */
         .progress { display: flex; align-items: center; gap: 0; margin-bottom: 32px; }
         .prog-step { display: flex; align-items: center; gap: 8px; }
         .prog-dot { width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; flex-shrink: 0; transition: all 0.2s; }
-        .prog-dot.done { background: #1a3d2b; color: #fff; }
-        .prog-dot.active { background: #1a3d2b; color: #fff; box-shadow: 0 0 0 4px rgba(26,61,43,0.15); }
+        .prog-dot.done { background: #1a3556; color: #fff; }
+        .prog-dot.active { background: #1a3556; color: #fff; box-shadow: 0 0 0 4px rgba(26,61,43,0.15); }
         .prog-dot.pending { background: #e2e8f0; color: #94a3b8; }
         .prog-label { font-size: 12px; font-weight: 500; color: #64748b; white-space: nowrap; }
-        .prog-label.active { color: #1a3d2b; font-weight: 600; }
+        .prog-label.active { color: #1a3556; font-weight: 600; }
         .prog-line { width: 32px; height: 2px; background: #e2e8f0; margin: 0 4px; flex-shrink: 0; }
-        .prog-line.done { background: #1a3d2b; }
+        .prog-line.done { background: #1a3556; }
 
         .card { background: #fff; border: 1px solid #e2e8f0; border-radius: 14px; padding: 32px; width: 100%; max-width: 480px; box-shadow: 0 4px 12px rgba(0,0,0,0.06); }
         .step-icon { font-size: 40px; margin-bottom: 16px; }
-        .step-title { font-size: 22px; font-weight: 700; color: #1a3d2b; margin-bottom: 8px; }
+        .step-title { font-size: 22px; font-weight: 700; color: #1a3556; margin-bottom: 8px; }
         .step-sub { font-size: 14px; color: #64748b; margin-bottom: 24px; line-height: 1.6; }
 
         .field { display: flex; flex-direction: column; gap: 5px; margin-bottom: 14px; }
         .field label { font-size: 12px; font-weight: 600; color: #64748b; text-transform: uppercase; letter-spacing: 0.4px; }
         .field input, .field select { padding: 10px 14px; border: 1px solid #e2e8f0; border-radius: 8px; font-size: 14px; color: #1e293b; background: #f8fafc; outline: none; font-family: inherit; transition: border-color 0.15s; }
-        .field input:focus, .field select:focus { border-color: #1a3d2b; box-shadow: 0 0 0 3px rgba(26,61,43,0.1); background: #fff; }
+        .field input:focus, .field select:focus { border-color: #1a3556; box-shadow: 0 0 0 3px rgba(26,61,43,0.1); background: #fff; }
         .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
 
-        .btn-next { width: 100%; background: #1a3d2b; color: #fff; padding: 12px; border-radius: 8px; border: none; font-size: 15px; font-weight: 600; cursor: pointer; font-family: inherit; margin-top: 8px; transition: background 0.15s; }
-        .btn-next:hover { background: #2d6b47; }
+        .btn-next { width: 100%; background: #1a3556; color: #fff; padding: 12px; border-radius: 8px; border: none; font-size: 15px; font-weight: 600; cursor: pointer; font-family: inherit; margin-top: 8px; transition: background 0.15s; }
+        .btn-next:hover { background: #2d5f8a; }
         .btn-next:disabled { opacity: 0.5; cursor: not-allowed; }
         .btn-skip { width: 100%; background: transparent; color: #94a3b8; padding: 10px; border-radius: 8px; border: none; font-size: 14px; cursor: pointer; font-family: inherit; margin-top: 6px; }
         .btn-skip:hover { color: #64748b; }
@@ -116,12 +116,12 @@ export default function OnboardingPage() {
         .welcome-list { list-style: none; padding: 0; margin-bottom: 24px; }
         .welcome-list li { padding: 10px 0; border-bottom: 1px solid #f1f5f9; font-size: 14px; color: #334155; display: flex; gap: 10px; align-items: center; }
         .welcome-list li:last-child { border-bottom: none; }
-        .welcome-list li::before { content: "✓"; color: #1a3d2b; font-weight: 700; flex-shrink: 0; }
+        .welcome-list li::before { content: "✓"; color: #1a3556; font-weight: 700; flex-shrink: 0; }
 
         /* Ready step */
         .ready-box { background: #f0faf4; border: 1px solid #d4f0e0; border-radius: 10px; padding: 20px; text-align: center; margin-bottom: 20px; }
-        .ready-box h3 { font-size: 16px; font-weight: 700; color: #1a3d2b; margin-bottom: 6px; }
-        .ready-box p { font-size: 13px; color: #2d6b47; }
+        .ready-box h3 { font-size: 16px; font-weight: 700; color: #1a3556; margin-bottom: 6px; }
+        .ready-box p { font-size: 13px; color: #2d5f8a; }
         .quick-links { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 16px; }
         .quick-link { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 14px; text-align: center; text-decoration: none; transition: all 0.15s; }
         .quick-link:hover { background: #f0faf4; border-color: #d4f0e0; }
@@ -131,8 +131,8 @@ export default function OnboardingPage() {
 
       <div className="page">
         <a href="/" className="logo">
-          <img src="/vetsai-icon.svg" alt="VetsAI" width={40} height={40} style={{ borderRadius: "10px" }} />
-          <span className="logo-text">VetsAI</span>
+          <img src="/healthpost-icon.svg" alt="Healthpost" width={40} height={40} style={{ borderRadius: "10px" }} />
+          <span className="logo-text">Healthpost</span>
         </a>
 
         {/* Progress */}
@@ -153,8 +153,8 @@ export default function OnboardingPage() {
           {/* Step 1 — Welcome */}
           {step === 1 && (
             <>
-              <div className="step-icon">🐾</div>
-              <div className="step-title">Welcome to VetsAI!</div>
+              <div className="step-icon">🏥</div>
+              <div className="step-title">Welcome to Healthpost!</div>
               <div className="step-sub">
                 Your free trial is active. Let&apos;s get your clinic set up in 2 minutes.
               </div>
@@ -163,7 +163,7 @@ export default function OnboardingPage() {
                 <li>Drug dosage guidance for clinician verification</li>
                 <li>Auto-generated SOAP note drafts</li>
                 <li>Patient records and case history</li>
-                <li>Powered by gold standard veterinary research</li>
+                <li>Powered by gold standard medical research</li>
               </ul>
               <button className="btn-next" onClick={() => setStep(2)}>
                 Set up my clinic →

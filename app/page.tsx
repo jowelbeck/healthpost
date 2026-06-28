@@ -9,8 +9,8 @@ export default function LandingPage() {
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
         :root {
-          --forest: #1a3d2b;
-          --forest-mid: #2d6b47;
+          --forest: #1a3556;
+          --forest-mid: #2d5f8a;
           --green: #3a8f5f;
           --green-light: #5ab57a;
           --cream: #f7f5f0;
@@ -202,14 +202,14 @@ export default function LandingPage() {
       {/* Nav */}
       <nav>
         <a href="/" className="nav-logo">
-          <img src="/vetsai-icon.svg" alt="VetsAI" width={36} height={36} style={{ borderRadius: "9px" }} />
-          <span className="nav-logo-text">VetsAI</span>
+          <img src="/healthpost-icon.svg" alt="Healthpost" width={36} height={36} style={{ borderRadius: "9px" }} />
+          <span className="nav-logo-text">Healthpost</span>
         </a>
         <div className="nav-links">
           <a href="#modules">Platform</a>
           <a href="#how-it-works">How it works</a>
           <a href="#pricing">Pricing</a>
-          <a href="mailto:hi@vetsai.vet">Book demo</a>
+          <a href="mailto:hi@healthpost.africa">Book demo</a>
           <a href="/signup" className="nav-cta">Start free →</a>
         </div>
         <a href="/fr" style={{ fontSize: 12, fontWeight: 600, color: "#64748b", textDecoration: "none", padding: "5px 10px", borderRadius: 6, border: "1px solid #e2e8f0" }}>🇫🇷 FR</a>
@@ -218,31 +218,31 @@ export default function LandingPage() {
       {/* Hero */}
       <section className="hero">
         <div className="hero-inner">
-          <div className="hero-tag">🐾 Clinic Operating System · Clinical Intelligence</div>
+          <div className="hero-tag">🏥 Hospital Operating System · Clinical Intelligence</div>
           <h1>
-            Run your veterinary clinic —<br />
+            Run your clinic or hospital —<br />
             <em>with intelligent clinical support.</em>
           </h1>
           <p className="hero-sub">
-            VetsAI is the clinic operating system for veterinary professionals — combining patient records, clinical support, and AI workflows in one place.
+            Healthpost is the hospital operating system for medical professionals — combining patient records, clinical support, and AI workflows in one place.
           </p>
           <div className="hero-for">
-            <div className="hero-for-item">Veterinary clinics</div>
+            <div className="hero-for-item">Medical clinics</div>
             <div className="hero-for-item">Private practices</div>
             <div className="hero-for-item">Mobile veterinarians</div>
             <div className="hero-for-item">Vet schools</div>
           </div>
           <div className="hero-actions">
             <a href="/signup" className="btn-primary">Start free trial →</a>
-            <a href="mailto:hi@vetsai.vet" className="btn-outline">📅 Book a clinic demo</a>
+            <a href="mailto:hi@healthpost.africa" className="btn-outline">📅 Book a clinic demo</a>
           </div>
           <p className="hero-note">No credit card required · First 3 months free · Cancel anytime</p>
           <div style={{ display: "flex", alignItems: "center", gap: 16, marginTop: 20, flexWrap: "wrap" }}>
             <div style={{ background: "rgba(255,255,255,0.95)", padding: 10, borderRadius: 10, display: "inline-block" }}>
-              <img src="https://api.qrserver.com/v1/create-qr-code/?size=80x80&data=https://vetsai.vet&color=1a3d2b" alt="VetsAI QR Code" width={80} height={80} style={{ display: "block" }} />
+              <img src="https://api.qrserver.com/v1/create-qr-code/?size=80x80&data=https://healthpost.africa&color=1a3556" alt="Healthpost QR Code" width={80} height={80} style={{ display: "block" }} />
             </div>
             <div>
-              <a href="https://vetsai.vet" style={{ color: "#fff", fontWeight: 700, fontSize: 14, textDecoration: "none", display: "block", marginBottom: 4 }}>vetsai.vet</a>
+              <a href="https://healthpost.africa" style={{ color: "#fff", fontWeight: 700, fontSize: 14, textDecoration: "none", display: "block", marginBottom: 4 }}>healthpost.africa</a>
               <p style={{ fontSize: 12, color: "rgba(255,255,255,0.5)" }}>📱 Scan to share with your clinic</p>
             </div>
           </div>
@@ -252,7 +252,7 @@ export default function LandingPage() {
       {/* Stats */}
       <div className="stats-bar">
         <div className="stats-inner">
-          <div className="stat"><div className="stat-num">3,367+</div><div className="stat-label">Pages of Veterinary Research</div></div>
+          <div className="stat"><div className="stat-num">3,367+</div><div className="stat-label">Pages of Medical Research</div></div>
           <div className="stat"><div className="stat-num">&lt;60s</div><div className="stat-label">Time to full assessment</div></div>
           <div className="stat"><div className="stat-num">15+</div><div className="stat-label">Animal species supported</div></div>
           <div className="stat"><div className="stat-num">$0</div><div className="stat-label">To get started today</div></div>
@@ -282,14 +282,14 @@ export default function LandingPage() {
               ))}
             </ul>
             <div className="solution-box">
-              <h3>VetsAI solves all of this</h3>
-              <p>One platform that handles the clinical administration — so your vets can focus on what matters: the animals.</p>
+              <h3>Healthpost solves all of this</h3>
+              <p>One platform that handles the clinical administration — so your doctors can focus on what matters: the patients.</p>
               <ul className="solution-items">
                 <li>Clinical notes generated automatically for clinician review</li>
                 <li>Drug dosage guidance by species and weight — for clinician verification</li>
                 <li>Automatic urgency flagging for every case</li>
                 <li>Full patient history in one place</li>
-                <li>Powered by the Gold Standard Veterinary Research</li>
+                <li>Powered by the Gold Standard Medical Research</li>
               </ul>
             </div>
           </div>
@@ -301,10 +301,10 @@ export default function LandingPage() {
         <div className="section-inner">
           <div className="eyebrow">Why clinics switch</div>
           <h2 className="section-title">A better way to run your clinic</h2>
-          <p className="section-sub">See what changes when your team uses VetsAI every day.</p>
+          <p className="section-sub">See what changes when your team uses Healthpost every day.</p>
           <div className="before-after-grid">
             <div className="ba-card ba-before">
-              <div className="ba-label">Before VetsAI</div>
+              <div className="ba-label">Before Healthpost</div>
               <ul className="ba-items">
                 <li>Paper notes and handwritten records</li>
                 <li>Manual SOAP note writing</li>
@@ -315,7 +315,7 @@ export default function LandingPage() {
               </ul>
             </div>
             <div className="ba-card ba-after">
-              <div className="ba-label">After VetsAI</div>
+              <div className="ba-label">After Healthpost</div>
               <ul className="ba-items">
                 <li>Digital records, always accessible</li>
                 <li>Clinical notes drafted instantly</li>
@@ -335,7 +335,7 @@ export default function LandingPage() {
           <div className="eyebrow">Built for continuity of care</div>
           <h2 className="section-title">Every visit becomes part of<br />a living patient record</h2>
           <p className="section-sub" style={{ color: "rgba(255,255,255,0.65)" }}>
-            VetsAI is not a chatbot. It is clinical infrastructure — every case, note, and recommendation is saved and searchable, building a complete picture of every patient over time.
+            Healthpost is not a chatbot. It is clinical infrastructure — every case, note, and recommendation is saved and searchable, building a complete picture of every patient over time.
           </p>
           <div className="continuity-grid">
             {[
@@ -360,7 +360,7 @@ export default function LandingPage() {
         <div className="section-inner">
           <div className="eyebrow">The platform</div>
           <h2 className="section-title">Everything your clinic needs,<br />in one place</h2>
-          <p className="section-sub">VetsAI is a full clinic operating system — not just a diagnostic tool.</p>
+          <p className="section-sub">Healthpost is a full hospital operating system — not just a diagnostic tool.</p>
           <div className="modules-grid">
             {[
               { icon: "🧠", title: "Clinical Support", desc: "Intelligent clinical guidance across symptoms, breed, age and weight — generated for veterinarian review.", live: true },
@@ -391,8 +391,8 @@ export default function LandingPage() {
           <p className="section-sub">No installation. No training. Start managing cases immediately.</p>
           <div className="steps">
             {[
-              { num: "01", title: "Enter the case", desc: "Input the animal type, breed, age, weight and symptoms. The more detail, the more complete the clinical support." },
-              { num: "02", title: "Clinical support is generated", desc: "VetsAI searches the Veterinary Research Database, checks drug dosages, triages urgency, and prepares a clinical summary — automatically." },
+              { num: "01", title: "Enter the case", desc: "Input the patient type, breed, age, weight and symptoms. The more detail, the more complete the clinical support." },
+              { num: "02", title: "Clinical support is generated", desc: "Healthpost searches the Medical Research Database, checks drug dosages, triages urgency, and prepares a clinical summary — automatically." },
               { num: "03", title: "Veterinarian reviews and acts", desc: "Your vet reviews the differential diagnoses, drug guidance, and SOAP note draft — then makes the clinical decision." },
               { num: "04", title: "Saved to patient records", desc: "Every case is automatically saved to the patient's history for full continuity of care across every visit." },
             ].map((s) => (
@@ -411,7 +411,7 @@ export default function LandingPage() {
         <div className="section-inner">
           <div className="eyebrow">Urgency detection</div>
           <h2 className="section-title">Never miss a critical case</h2>
-          <p className="section-sub">VetsAI automatically triages every case so your team always knows what to prioritise.</p>
+          <p className="section-sub">Healthpost automatically triages every case so your team always knows what to prioritise.</p>
           <div className="urgency-cards">
             <div className="urgency-card urgency-high">
               <div className="urgency-label">🔴 High urgency</div>
@@ -451,7 +451,7 @@ export default function LandingPage() {
                 featured: true, popular: true,
               },
               {
-                name: "Clinic OS", price: "$199", period: "per month",
+                name: "Hospital OS", price: "$199", period: "per month",
                 features: ["10 vet accounts", "Unlimited cases", "Full clinic OS access", "Patient records", "Appointments", "Billing & invoicing", "Advanced analytics", "Dedicated support"],
                 featured: false, popular: false,
               },
@@ -476,19 +476,19 @@ export default function LandingPage() {
         <div className="section-inner">
           <div style={{ display: "flex", flexDirection: "column", alignItems: "center", marginBottom: 28 }}>
             <div style={{ background: "#fff", padding: 16, borderRadius: 12, display: "inline-block", marginBottom: 10 }}>
-              <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://vetsai.vet&color=1a3d2b" alt="VetsAI QR Code" width={120} height={120} style={{ display: "block" }} />
+              <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://healthpost.africa&color=1a3556" alt="Healthpost QR Code" width={120} height={120} style={{ display: "block" }} />
             </div>
-            <a href="https://vetsai.vet" style={{ color: "#fff", fontWeight: 700, fontSize: 15, letterSpacing: 0.5, textDecoration: "none", background: "rgba(255,255,255,0.15)", padding: "6px 16px", borderRadius: 20, border: "1px solid rgba(255,255,255,0.3)" }}>vetsai.vet</a>
+            <a href="https://healthpost.africa" style={{ color: "#fff", fontWeight: 700, fontSize: 15, letterSpacing: 0.5, textDecoration: "none", background: "rgba(255,255,255,0.15)", padding: "6px 16px", borderRadius: 20, border: "1px solid rgba(255,255,255,0.3)" }}>healthpost.africa</a>
             <p style={{ fontSize: 12, color: "rgba(255,255,255,0.5)", marginTop: 6 }}>Scan or click to visit</p>
           </div>
           <div className="eyebrow" style={{ color: "rgba(255,255,255,0.6)" }}>Get started today</div>
           <h2 className="section-title">Ready to run a smarter clinic?</h2>
           <p className="cta-sub">
-            Designed for veterinary professionals across Africa and beyond — VetsAI delivers intelligent clinical support wherever you practice.
+            Designed for medical professionals across Africa and beyond — Healthpost delivers intelligent clinical support wherever you practice.
           </p>
           <div className="cta-actions">
             <a href="/signup" className="btn-primary">Start free trial →</a>
-            <a href="mailto:hi@vetsai.vet" className="btn-outline">📅 Book a clinic demo</a>
+            <a href="mailto:hi@healthpost.africa" className="btn-outline">📅 Book a clinic demo</a>
           </div>
           <p style={{ marginTop: 20, fontSize: 12, color: "rgba(255,255,255,0.4)" }}>First 10 clinics get 3 months completely free</p>
         </div>
@@ -497,18 +497,18 @@ export default function LandingPage() {
       {/* Footer */}
       <footer>
         <div style={{ marginBottom: 12 }}>
-          <span style={{ display: "flex", alignItems: "center", gap: "8px", color: "rgba(255,255,255,0.9)", fontWeight: 600 }}><img src="/vetsai-icon.svg" alt="VetsAI" width={24} height={24} style={{ borderRadius: "6px" }} /> VetsAI</span>
-          &nbsp;·&nbsp; Clinic operating system for veterinary professionals worldwide
+          <span style={{ display: "flex", alignItems: "center", gap: "8px", color: "rgba(255,255,255,0.9)", fontWeight: 600 }}><img src="/healthpost-icon.svg" alt="Healthpost" width={24} height={24} style={{ borderRadius: "6px" }} /> Healthpost</span>
+          &nbsp;·&nbsp; Clinic operating system for medical professionals worldwide
         </div>
         <div style={{ display: "flex", gap: 20, justifyContent: "center", flexWrap: "wrap", marginBottom: 16 }}>
           <a href="#modules">Platform</a>
           <a href="#how-it-works">How it works</a>
           <a href="#pricing">Pricing</a>
           <a href="/signup">Try free</a>
-          <a href="mailto:hi@vetsai.vet">Contact</a>
+          <a href="mailto:hi@healthpost.africa">Contact</a>
         </div>
         <div style={{ fontSize: 12, color: "rgba(255,255,255,0.3)" }}>
-          © {new Date().getFullYear()} VetsAI. Designed for veterinary professionals across Africa and beyond.
+          © {new Date().getFullYear()} Healthpost. Designed for medical professionals across Africa and beyond.
         </div>
       </footer>
     </>

@@ -63,7 +63,7 @@ function animalEmoji(animal?: string): string {
     horse: "🐴",
     hamster: "🐹",
   };
-  return map[animal?.toLowerCase() ?? ""] ?? "🐾";
+  return map[animal?.toLowerCase() ?? ""] ?? "🏥";
 }
 
 function urgencyClass(urgency?: string): string {
@@ -352,7 +352,7 @@ export default function Home() {
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
     a.href = url;
-    a.download = "veterinary-cases.json";
+    a.download = "medical-cases.json";
     a.click();
     URL.revokeObjectURL(url);
   };
@@ -432,7 +432,7 @@ export default function Home() {
 <html>
 <head>
   <meta charset="utf-8"/>
-  <title>VetsAI Case Report — ${petData.petName || petData.animal}</title>
+  <title>Healthpost Case Report — ${petData.petName || petData.animal}</title>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { font-family: system-ui, -apple-system, sans-serif; font-size: 13px; color: #1e293b; padding: 40px; max-width: 720px; margin: 0 auto; }
@@ -458,13 +458,13 @@ export default function Home() {
 </head>
 <body>
   <div class="header">
-    <div class="logo"><img src="/vetsai-icon.svg" alt="VetsAI" width="28" height="28" style="border-radius:6px;vertical-align:middle;margin-right:8px;"> VetsAI<span>Clinic Operating System</span></div>
+    <div class="logo"><img src="/healthpost-icon.svg" alt="Healthpost" width="28" height="28" style="border-radius:6px;vertical-align:middle;margin-right:8px;"> Healthpost<span>Hospital Operating System</span></div>
     <div class="report-date">Case Report<br/>${date}</div>
   </div>
 
   <div class="urgency-banner">
     Urgency: ${(data.urgency ?? "unknown").toUpperCase()}
-    ${data.urgency === "high" ? " — Seek immediate veterinary care" : ""}
+    ${data.urgency === "high" ? " — Seek immediate medical care" : ""}
   </div>
 
   <div class="pet-grid">
@@ -486,7 +486,7 @@ export default function Home() {
   ${soapSection}
   ${sourcesSection}
 
-  <div class="disclaimer">${data.disclaimer || "This report is not a substitute for professional veterinary advice. Always consult a licensed veterinarian."}</div>
+  <div class="disclaimer">${data.disclaimer || "This report is not a substitute for professional medical advice. Always consult a licensed veterinarian."}</div>
 </body>
 </html>`;
   };
@@ -673,10 +673,10 @@ export default function Home() {
         {/* ── Header ── */}
         <header className="header">
           <div className="header-left">
-            <img src="/vetsai-icon.svg" alt="VetsAI" width={40} height={40} style={{ borderRadius: "10px", flexShrink: 0 }} />
+            <img src="/healthpost-icon.svg" alt="Healthpost" width={40} height={40} style={{ borderRadius: "10px", flexShrink: 0 }} />
             <div>
-              <h1>VetsAI</h1>
-              <div className="header-sub">Clinical decision support {subscription && <span style={{ marginLeft: 8, background: subscription.status === "active" ? "#97bc62" : "#e2e8f0", color: subscription.status === "active" ? "#1a3d2b" : "#64748b", padding: "2px 8px", borderRadius: 10, fontSize: 11, fontWeight: 700, textTransform: "uppercase" as const }}>{subscription.plan} {subscription.status}</span>}</div><button
+              <h1>Healthpost</h1>
+              <div className="header-sub">Clinical decision support {subscription && <span style={{ marginLeft: 8, background: subscription.status === "active" ? "#4fc3f7" : "#e2e8f0", color: subscription.status === "active" ? "#1a3556" : "#64748b", padding: "2px 8px", borderRadius: 10, fontSize: 11, fontWeight: 700, textTransform: "uppercase" as const }}>{subscription.plan} {subscription.status}</span>}</div><button
               style={{ fontSize: 12, padding: "6px 12px", background: "var(--slate-100)", border: "1px solid var(--slate-200)", borderRadius: 6, cursor: "pointer", color: "var(--slate-500)" }}
               onClick={async () => {
                 const { supabase } = await import("@/lib/supabase");
@@ -802,7 +802,7 @@ export default function Home() {
             {/* Emergency banner */}
             {result?.urgency === "high" && (
               <div className="alert alert-emergency">
-                <strong>🚨 Emergency: Seek immediate veterinary care</strong>
+                <strong>🚨 Emergency: Seek immediate medical care</strong>
                 This case has been flagged as high urgency based on the symptoms provided.
                 <ul>
                   <li>Contact a veterinarian immediately</li>

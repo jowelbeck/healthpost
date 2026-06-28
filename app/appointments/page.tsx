@@ -22,7 +22,7 @@ const TIMES = ["08:00", "08:30", "09:00", "09:30", "10:00", "10:30", "11:00", "1
 
 function statusColor(s: string) {
   if (s === "scheduled") return { bg: "#eff6ff", color: "#1d4ed8" };
-  if (s === "completed") return { bg: "#f0faf4", color: "#1a3d2b" };
+  if (s === "completed") return { bg: "#f0faf4", color: "#1a3556" };
   if (s === "cancelled") return { bg: "#fef2f2", color: "#dc2626" };
   return { bg: "#f1f5f9", color: "#64748b" };
 }
@@ -34,7 +34,7 @@ function typeIcon(t: string) {
 
 function buildWhatsAppLink(phone: string, patientName: string, ownerName: string, date: string, time: string, type: string) {
   const formattedDate = new Date(date + "T00:00:00").toLocaleDateString(undefined, { weekday: "long", month: "long", day: "numeric", year: "numeric" });
-  const message = `Hello ${ownerName}, your appointment for *${patientName}* (${type}) is confirmed for *${formattedDate} at ${time}*. Please arrive 10 minutes early. Thank you — VetsAI Clinic`;
+  const message = `Hello ${ownerName}, your appointment for *${patientName}* (${type}) is confirmed for *${formattedDate} at ${time}*. Please arrive 10 minutes early. Thank you — Healthpost Clinic`;
   const cleanPhone = phone.replace(/\s+/g, "").replace(/^\+/, "");
   return `https://wa.me/${cleanPhone}?text=${encodeURIComponent(message)}`;
 }
@@ -170,44 +170,44 @@ export default function AppointmentsPage() {
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
         body { font-family: system-ui, -apple-system, sans-serif; background: #f1f5f9; color: #1e293b; font-size: 14px; }
         .app-header { background: #fff; border-bottom: 1px solid #e2e8f0; padding: 0 20px; display: flex; align-items: center; justify-content: space-between; height: 56px; position: sticky; top: 0; z-index: 50; }
-        .app-logo { display: flex; align-items: center; gap: 8px; font-size: 16px; font-weight: 700; color: #1a3d2b; text-decoration: none; }
-        .app-logo-mark { width: 30px; height: 30px; background: #1a3d2b; border-radius: 7px; display: flex; align-items: center; justify-content: center; font-size: 15px; }
+        .app-logo { display: flex; align-items: center; gap: 8px; font-size: 16px; font-weight: 700; color: #1a3556; text-decoration: none; }
+        .app-logo-mark { width: 30px; height: 30px; background: #1a3556; border-radius: 7px; display: flex; align-items: center; justify-content: center; font-size: 15px; }
         .nav-links { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
         .nav-link { font-size: 12px; font-weight: 500; color: #64748b; text-decoration: none; padding: 5px 8px; border-radius: 6px; transition: all 0.15s; }
         .nav-link:hover { background: #f1f5f9; color: #1e293b; }
-        .nav-link.active { background: #f0faf4; color: #1a3d2b; font-weight: 600; }
+        .nav-link.active { background: #f0faf4; color: #1a3556; font-weight: 600; }
         .btn-logout { font-size: 12px; padding: 6px 12px; background: #f1f5f9; border: 1px solid #e2e8f0; border-radius: 6px; cursor: pointer; color: #64748b; font-family: inherit; }
         .page-body { max-width: 860px; margin: 0 auto; padding: 24px 16px 48px; }
         .page-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; flex-wrap: wrap; gap: 12px; }
-        .page-title { font-size: 20px; font-weight: 700; color: #1a3d2b; }
-        .btn-add { background: #1a3d2b; color: #fff; padding: 9px 18px; border-radius: 8px; border: none; font-size: 13px; font-weight: 600; cursor: pointer; font-family: inherit; }
-        .btn-add:hover { background: #2d6b47; }
+        .page-title { font-size: 20px; font-weight: 700; color: #1a3556; }
+        .btn-add { background: #1a3556; color: #fff; padding: 9px 18px; border-radius: 8px; border: none; font-size: 13px; font-weight: 600; cursor: pointer; font-family: inherit; }
+        .btn-add:hover { background: #2d5f8a; }
         .alert { border-radius: 8px; padding: 10px 14px; margin-bottom: 14px; font-size: 13px; }
         .alert-error { background: #fef2f2; border: 1px solid #fecaca; color: #dc2626; }
-        .alert-success { background: #f0faf4; border: 1px solid #d4f0e0; color: #1a3d2b; }
+        .alert-success { background: #f0faf4; border: 1px solid #d4f0e0; color: #1a3556; }
         .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 20px; }
         .stat-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 10px; padding: 14px 16px; }
         .stat-label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: #94a3b8; margin-bottom: 6px; }
         .stat-value { font-size: 24px; font-weight: 700; color: #1e293b; }
-        .stat-card.today .stat-value { color: #1a3d2b; }
+        .stat-card.today .stat-value { color: #1a3556; }
         .card { background: #fff; border: 1px solid #e2e8f0; border-radius: 10px; padding: 20px; margin-bottom: 16px; }
         .card-title { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: #94a3b8; margin-bottom: 16px; }
         .field-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
         .field { display: flex; flex-direction: column; gap: 5px; }
         .field label { font-size: 11px; font-weight: 600; color: #64748b; text-transform: uppercase; letter-spacing: 0.4px; }
         .field input, .field select, .field textarea { padding: 9px 12px; border: 1px solid #e2e8f0; border-radius: 6px; font-size: 14px; color: #1e293b; background: #f8fafc; outline: none; font-family: inherit; transition: border-color 0.15s; }
-        .field input:focus, .field select:focus, .field textarea:focus { border-color: #1a3d2b; box-shadow: 0 0 0 3px rgba(26,61,43,0.1); background: #fff; }
+        .field input:focus, .field select:focus, .field textarea:focus { border-color: #1a3556; box-shadow: 0 0 0 3px rgba(26,61,43,0.1); background: #fff; }
         .notify-section { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 14px; margin-bottom: 12px; }
         .notify-title { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: #64748b; margin-bottom: 10px; }
         .notify-options { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 10px; }
         .notify-btn { padding: 7px 14px; border-radius: 8px; border: 1.5px solid #e2e8f0; background: #fff; font-size: 13px; font-weight: 500; color: #64748b; cursor: pointer; font-family: inherit; transition: all 0.15s; display: flex; align-items: center; gap: 6px; }
-        .notify-btn.active { border-color: #1a3d2b; background: #f0faf4; color: #1a3d2b; font-weight: 600; }
+        .notify-btn.active { border-color: #1a3556; background: #f0faf4; color: #1a3556; font-weight: 600; }
         .btn-row { display: flex; gap: 8px; margin-top: 16px; }
-        .btn-save { background: #1a3d2b; color: #fff; padding: 9px 18px; border-radius: 7px; border: none; font-size: 13px; font-weight: 600; cursor: pointer; font-family: inherit; }
+        .btn-save { background: #1a3556; color: #fff; padding: 9px 18px; border-radius: 7px; border: none; font-size: 13px; font-weight: 600; cursor: pointer; font-family: inherit; }
         .btn-cancel { background: #fff; color: #64748b; padding: 9px 18px; border-radius: 7px; border: 1px solid #e2e8f0; font-size: 13px; font-weight: 600; cursor: pointer; font-family: inherit; }
         .filter-row { display: flex; gap: 8px; margin-bottom: 14px; align-items: center; flex-wrap: wrap; }
         .filter-btn { padding: 6px 14px; border-radius: 20px; border: 1px solid #e2e8f0; background: #fff; font-size: 12px; font-weight: 500; color: #64748b; cursor: pointer; font-family: inherit; }
-        .filter-btn.active { background: #1a3d2b; color: #fff; border-color: #1a3d2b; }
+        .filter-btn.active { background: #1a3556; color: #fff; border-color: #1a3556; }
         .date-filter { padding: 6px 10px; border: 1px solid #e2e8f0; border-radius: 8px; font-size: 12px; background: #fff; outline: none; font-family: inherit; color: #64748b; }
         .appt-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 10px; margin-bottom: 8px; overflow: hidden; }
         .appt-header { display: flex; align-items: center; gap: 12px; padding: 13px 16px; }
@@ -219,11 +219,11 @@ export default function AppointmentsPage() {
         .appt-time { font-size: 13px; font-weight: 600; color: #1e293b; }
         .status-badge { font-size: 11px; font-weight: 600; padding: 3px 10px; border-radius: 20px; }
         .appt-actions { display: flex; gap: 6px; padding: 0 16px 12px; flex-wrap: wrap; }
-        .btn-complete { background: #f0faf4; color: #1a3d2b; font-size: 12px; font-weight: 600; padding: 5px 12px; border-radius: 6px; border: 1px solid #d4f0e0; cursor: pointer; font-family: inherit; }
+        .btn-complete { background: #f0faf4; color: #1a3556; font-size: 12px; font-weight: 600; padding: 5px 12px; border-radius: 6px; border: 1px solid #d4f0e0; cursor: pointer; font-family: inherit; }
         .btn-whatsapp { background: #f0fdf4; color: #15803d; font-size: 12px; font-weight: 600; padding: 5px 12px; border-radius: 6px; border: 1px solid #bbf7d0; cursor: pointer; font-family: inherit; }
         .btn-cancel-appt { background: #fef2f2; color: #dc2626; font-size: 12px; font-weight: 600; padding: 5px 12px; border-radius: 6px; border: 1px solid #fecaca; cursor: pointer; font-family: inherit; }
         .btn-delete { background: #fff; color: #94a3b8; font-size: 12px; padding: 5px 10px; border-radius: 6px; border: 1px solid #e2e8f0; cursor: pointer; font-family: inherit; }
-        .today-banner { background: #1a3d2b; color: #fff; border-radius: 10px; padding: 14px 18px; margin-bottom: 16px; display: flex; align-items: center; gap: 10px; }
+        .today-banner { background: #1a3556; color: #fff; border-radius: 10px; padding: 14px 18px; margin-bottom: 16px; display: flex; align-items: center; gap: 10px; }
         .today-banner-count { font-size: 20px; font-weight: 700; color: #fff; }
         .today-banner-text { font-size: 13px; color: rgba(255,255,255,0.85); }
         .empty { text-align: center; padding: 40px 20px; color: #94a3b8; }
@@ -235,8 +235,8 @@ export default function AppointmentsPage() {
 
       <div className="app-header">
         <a href="/app" className="app-logo">
-          <img src="/vetsai-icon.svg" alt="VetsAI" width={30} height={30} style={{ borderRadius: "7px" }} />
-          VetsAI
+          <img src="/healthpost-icon.svg" alt="Healthpost" width={30} height={30} style={{ borderRadius: "7px" }} />
+          Healthpost
         </a>
         <div className="nav-links">
           <a href="/app" className="nav-link">Cases</a>
@@ -380,13 +380,13 @@ export default function AppointmentsPage() {
             const sc = statusColor(appt.status);
             const isToday = appt.date === today;
             return (
-              <div className="appt-card" key={appt.id} style={{ borderLeft: isToday ? "3px solid #1a3d2b" : undefined }}>
+              <div className="appt-card" key={appt.id} style={{ borderLeft: isToday ? "3px solid #1a3556" : undefined }}>
                 <div className="appt-header">
                   <div className="appt-icon">{typeIcon(appt.type)}</div>
                   <div className="appt-info">
                     <div className="appt-name">
                       {appt.patient_name}
-                      {isToday && <span style={{ fontSize: 11, fontWeight: 700, color: "#1a3d2b", marginLeft: 8, background: "#f0faf4", padding: "2px 8px", borderRadius: 20 }}>Today</span>}
+                      {isToday && <span style={{ fontSize: 11, fontWeight: 700, color: "#1a3556", marginLeft: 8, background: "#f0faf4", padding: "2px 8px", borderRadius: 20 }}>Today</span>}
                     </div>
                     <div className="appt-meta">
                       {appt.type} · {new Date(appt.date + "T00:00:00").toLocaleDateString(undefined, { weekday: "short", month: "short", day: "numeric" })}

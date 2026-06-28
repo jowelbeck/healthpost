@@ -128,7 +128,7 @@ export default function BillingPage() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           type: "invoice",
-          to: ownerPhone.trim() || "clinic@vetsai.vet",
+          to: ownerPhone.trim() || "clinic@healthpost.africa",
           data: {
             patientName: patientName.trim(),
             ownerName: ownerName.trim(),
@@ -169,8 +169,8 @@ export default function BillingPage() {
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { font-family: system-ui, sans-serif; font-size: 13px; color: #1e293b; padding: 40px; max-width: 680px; margin: 0 auto; }
-    .header { display: flex; justify-content: space-between; border-bottom: 2px solid #1a3d2b; padding-bottom: 16px; margin-bottom: 24px; }
-    .logo { font-size: 20px; font-weight: 700; color: #1a3d2b; }
+    .header { display: flex; justify-content: space-between; border-bottom: 2px solid #1a3556; padding-bottom: 16px; margin-bottom: 24px; }
+    .logo { font-size: 20px; font-weight: 700; color: #1a3556; }
     .logo span { font-size: 12px; font-weight: 400; color: #64748b; display: block; }
     .invoice-info { text-align: right; font-size: 12px; color: #64748b; }
     .invoice-info strong { display: block; font-size: 16px; color: #1e293b; margin-bottom: 4px; }
@@ -181,15 +181,15 @@ export default function BillingPage() {
     table { width: 100%; border-collapse: collapse; }
     th { text-align: left; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: #94a3b8; padding: 8px 0; border-bottom: 1px solid #e2e8f0; }
     td { padding: 10px 0; border-bottom: 1px solid #f1f5f9; font-size: 13px; }
-    .total-row { font-weight: 700; font-size: 15px; border-top: 2px solid #1a3d2b; }
-    .status-badge { display: inline-block; padding: 3px 10px; border-radius: 20px; font-size: 11px; font-weight: 700; background: ${inv.status === 'paid' ? '#f0faf4' : '#fef3c7'}; color: ${inv.status === 'paid' ? '#1a3d2b' : '#92400e'}; }
+    .total-row { font-weight: 700; font-size: 15px; border-top: 2px solid #1a3556; }
+    .status-badge { display: inline-block; padding: 3px 10px; border-radius: 20px; font-size: 11px; font-weight: 700; background: ${inv.status === 'paid' ? '#f0faf4' : '#fef3c7'}; color: ${inv.status === 'paid' ? '#1a3556' : '#92400e'}; }
     .footer { margin-top: 40px; padding-top: 16px; border-top: 1px solid #e2e8f0; font-size: 11px; color: #94a3b8; text-align: center; }
     @media print { body { padding: 20px; } }
   </style>
 </head>
 <body>
   <div class="header">
-    <div class="logo">🐾 VetsAI<span>Veterinary Clinic Management</span></div>
+    <div class="logo">🏥 Healthpost<span>Medical Clinic Management</span></div>
     <div class="invoice-info">
       <strong>INVOICE</strong>
       Date: ${new Date(inv.created_at).toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' })}
@@ -213,7 +213,7 @@ export default function BillingPage() {
     </table>
   </div>
   ${inv.notes ? `<div class="section"><div class="section-title">Notes</div><p>${inv.notes}</p></div>` : ''}
-  <div class="footer">VetsAI · vetsai.vet · Thank you for your business</div>
+  <div class="footer">Healthpost · healthpost.africa · Thank you for your business</div>
 </body>
 </html>`;
     const win = window.open("", "_blank");
@@ -241,26 +241,26 @@ export default function BillingPage() {
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
         body { font-family: system-ui, -apple-system, sans-serif; background: #f1f5f9; color: #1e293b; font-size: 14px; }
         .app-header { background: #fff; border-bottom: 1px solid #e2e8f0; padding: 0 20px; display: flex; align-items: center; justify-content: space-between; height: 56px; position: sticky; top: 0; z-index: 50; }
-        .app-logo { display: flex; align-items: center; gap: 8px; font-size: 16px; font-weight: 700; color: #1a3d2b; text-decoration: none; }
-        .app-logo-mark { width: 30px; height: 30px; background: #1a3d2b; border-radius: 7px; display: flex; align-items: center; justify-content: center; font-size: 15px; }
+        .app-logo { display: flex; align-items: center; gap: 8px; font-size: 16px; font-weight: 700; color: #1a3556; text-decoration: none; }
+        .app-logo-mark { width: 30px; height: 30px; background: #1a3556; border-radius: 7px; display: flex; align-items: center; justify-content: center; font-size: 15px; }
         .nav-links { display: flex; align-items: center; gap: 12px; }
         .nav-link { font-size: 13px; font-weight: 500; color: #64748b; text-decoration: none; padding: 5px 10px; border-radius: 6px; transition: all 0.15s; }
         .nav-link:hover { background: #f1f5f9; color: #1e293b; }
-        .nav-link.active { background: #f0faf4; color: #1a3d2b; font-weight: 600; }
+        .nav-link.active { background: #f0faf4; color: #1a3556; font-weight: 600; }
         .btn-logout { font-size: 12px; padding: 6px 12px; background: #f1f5f9; border: 1px solid #e2e8f0; border-radius: 6px; cursor: pointer; color: #64748b; font-family: inherit; }
         .page-body { max-width: 860px; margin: 0 auto; padding: 24px 16px 48px; }
         .page-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; flex-wrap: wrap; gap: 12px; }
-        .page-title { font-size: 20px; font-weight: 700; color: #1a3d2b; }
-        .btn-add { background: #1a3d2b; color: #fff; padding: 9px 18px; border-radius: 8px; border: none; font-size: 13px; font-weight: 600; cursor: pointer; font-family: inherit; }
-        .btn-add:hover { background: #2d6b47; }
+        .page-title { font-size: 20px; font-weight: 700; color: #1a3556; }
+        .btn-add { background: #1a3556; color: #fff; padding: 9px 18px; border-radius: 8px; border: none; font-size: 13px; font-weight: 600; cursor: pointer; font-family: inherit; }
+        .btn-add:hover { background: #2d5f8a; }
         .alert { border-radius: 8px; padding: 10px 14px; margin-bottom: 14px; font-size: 13px; }
         .alert-error { background: #fef2f2; border: 1px solid #fecaca; color: #dc2626; }
-        .alert-success { background: #f0faf4; border: 1px solid #d4f0e0; color: #1a3d2b; }
+        .alert-success { background: #f0faf4; border: 1px solid #d4f0e0; color: #1a3556; }
         .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 20px; }
         .stat-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 10px; padding: 14px 16px; }
         .stat-label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: #94a3b8; margin-bottom: 6px; }
         .stat-value { font-size: 22px; font-weight: 700; color: #1e293b; }
-        .stat-card.paid .stat-value { color: #1a3d2b; }
+        .stat-card.paid .stat-value { color: #1a3556; }
         .stat-card.unpaid .stat-value { color: #d97706; }
         .card { background: #fff; border: 1px solid #e2e8f0; border-radius: 10px; padding: 20px; margin-bottom: 16px; }
         .card-title { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: #94a3b8; margin-bottom: 16px; }
@@ -268,26 +268,26 @@ export default function BillingPage() {
         .field { display: flex; flex-direction: column; gap: 5px; }
         .field label { font-size: 11px; font-weight: 600; color: #64748b; text-transform: uppercase; letter-spacing: 0.4px; }
         .field input, .field select, .field textarea { padding: 9px 12px; border: 1px solid #e2e8f0; border-radius: 6px; font-size: 14px; color: #1e293b; background: #f8fafc; outline: none; font-family: inherit; transition: border-color 0.15s; }
-        .field input:focus, .field select:focus, .field textarea:focus { border-color: #1a3d2b; box-shadow: 0 0 0 3px rgba(26,61,43,0.1); background: #fff; }
+        .field input:focus, .field select:focus, .field textarea:focus { border-color: #1a3556; box-shadow: 0 0 0 3px rgba(26,61,43,0.1); background: #fff; }
         .services-header { display: grid; grid-template-columns: 2fr 80px 100px 36px; gap: 8px; margin-bottom: 8px; }
         .services-header span { font-size: 11px; font-weight: 600; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.4px; }
         .service-row { display: grid; grid-template-columns: 2fr 80px 100px 36px; gap: 8px; margin-bottom: 8px; align-items: center; }
         .service-row input { padding: 8px 10px; border: 1px solid #e2e8f0; border-radius: 6px; font-size: 13px; background: #f8fafc; outline: none; font-family: inherit; }
-        .service-row input:focus { border-color: #1a3d2b; background: #fff; }
+        .service-row input:focus { border-color: #1a3556; background: #fff; }
         .btn-remove-svc { background: #fff; border: 1px solid #fecaca; color: #dc2626; width: 32px; height: 32px; border-radius: 6px; cursor: pointer; font-size: 14px; display: flex; align-items: center; justify-content: center; }
         .templates { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 12px; }
         .template-btn { background: #f1f5f9; border: 1px solid #e2e8f0; color: #64748b; font-size: 11px; padding: 4px 10px; border-radius: 20px; cursor: pointer; font-family: inherit; transition: all 0.15s; }
-        .template-btn:hover { background: #f0faf4; border-color: #d4f0e0; color: #1a3d2b; }
+        .template-btn:hover { background: #f0faf4; border-color: #d4f0e0; color: #1a3556; }
         .service-total { background: #f0faf4; border-radius: 8px; padding: 12px 16px; display: flex; justify-content: space-between; align-items: center; margin: 12px 0; }
         .service-total span { font-size: 13px; color: #64748b; }
-        .service-total strong { font-size: 18px; font-weight: 700; color: #1a3d2b; }
+        .service-total strong { font-size: 18px; font-weight: 700; color: #1a3556; }
         .btn-row { display: flex; gap: 8px; margin-top: 16px; }
-        .btn-save { background: #1a3d2b; color: #fff; padding: 9px 18px; border-radius: 7px; border: none; font-size: 13px; font-weight: 600; cursor: pointer; font-family: inherit; }
+        .btn-save { background: #1a3556; color: #fff; padding: 9px 18px; border-radius: 7px; border: none; font-size: 13px; font-weight: 600; cursor: pointer; font-family: inherit; }
         .btn-save:disabled { opacity: 0.5; cursor: not-allowed; }
         .btn-cancel { background: #fff; color: #64748b; padding: 9px 18px; border-radius: 7px; border: 1px solid #e2e8f0; font-size: 13px; font-weight: 600; cursor: pointer; font-family: inherit; }
         .filter-row { display: flex; gap: 8px; margin-bottom: 14px; }
         .filter-btn { padding: 6px 14px; border-radius: 20px; border: 1px solid #e2e8f0; background: #fff; font-size: 12px; font-weight: 500; color: #64748b; cursor: pointer; font-family: inherit; transition: all 0.15s; }
-        .filter-btn.active { background: #1a3d2b; color: #fff; border-color: #1a3d2b; }
+        .filter-btn.active { background: #1a3556; color: #fff; border-color: #1a3556; }
         .invoice-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 10px; margin-bottom: 8px; overflow: hidden; transition: box-shadow 0.15s; }
         .invoice-card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
         .invoice-header { display: flex; align-items: center; gap: 12px; padding: 13px 16px; cursor: pointer; }
@@ -298,7 +298,7 @@ export default function BillingPage() {
         .invoice-right { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
         .invoice-amount { font-size: 15px; font-weight: 700; color: #1e293b; }
         .status-badge { font-size: 11px; font-weight: 600; padding: 3px 10px; border-radius: 20px; }
-        .status-paid { background: #f0faf4; color: #1a3d2b; }
+        .status-paid { background: #f0faf4; color: #1a3556; }
         .status-unpaid { background: #fef3c7; color: #92400e; }
         .invoice-body { padding: 0 16px 16px; border-top: 1px solid #f1f5f9; }
         .invoice-body-inner { padding-top: 14px; }
@@ -306,7 +306,7 @@ export default function BillingPage() {
         .services-table th { text-align: left; font-size: 11px; font-weight: 600; color: #94a3b8; text-transform: uppercase; padding: 6px 0; border-bottom: 1px solid #e2e8f0; }
         .services-table td { padding: 8px 0; border-bottom: 1px solid #f1f5f9; font-size: 13px; }
         .invoice-actions { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 12px; }
-        .btn-pay { background: #1a3d2b; color: #fff; font-size: 12px; font-weight: 600; padding: 6px 14px; border-radius: 6px; border: none; cursor: pointer; font-family: inherit; }
+        .btn-pay { background: #1a3556; color: #fff; font-size: 12px; font-weight: 600; padding: 6px 14px; border-radius: 6px; border: none; cursor: pointer; font-family: inherit; }
         .btn-print { background: #fff; color: #64748b; font-size: 12px; font-weight: 600; padding: 6px 14px; border-radius: 6px; border: 1px solid #e2e8f0; cursor: pointer; font-family: inherit; }
         .btn-del { background: #fff; color: #dc2626; font-size: 12px; padding: 6px 12px; border-radius: 6px; border: 1px solid #fecaca; cursor: pointer; font-family: inherit; }
         .empty { text-align: center; padding: 40px 20px; color: #94a3b8; }
@@ -319,8 +319,8 @@ export default function BillingPage() {
 
       <div className="app-header">
         <a href="/app" className="app-logo">
-          <img src="/vetsai-icon.svg" alt="VetsAI" width={30} height={30} style={{ borderRadius: "7px" }} />
-          VetsAI
+          <img src="/healthpost-icon.svg" alt="Healthpost" width={30} height={30} style={{ borderRadius: "7px" }} />
+          Healthpost
         </a>
         <div className="nav-links">
           <a href="/app" className="nav-link">New case</a>
