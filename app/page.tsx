@@ -229,8 +229,8 @@ export default function LandingPage() {
           <div className="hero-for">
             <div className="hero-for-item">Medical clinics</div>
             <div className="hero-for-item">Private practices</div>
-            <div className="hero-for-item">Mobile veterinarians</div>
-            <div className="hero-for-item">Vet schools</div>
+            <div className="hero-for-item">Mobile clinics</div>
+            <div className="hero-for-item">Medical schools</div>
           </div>
           <div className="hero-actions">
             <a href="/signup" className="btn-primary">Start free trial →</a>
@@ -254,7 +254,7 @@ export default function LandingPage() {
         <div className="stats-inner">
           <div className="stat"><div className="stat-num">3,367+</div><div className="stat-label">Pages of Medical Research</div></div>
           <div className="stat"><div className="stat-num">&lt;60s</div><div className="stat-label">Time to full assessment</div></div>
-          <div className="stat"><div className="stat-num">15+</div><div className="stat-label">Animal species supported</div></div>
+          <div className="stat"><div className="stat-num">15+</div><div className="stat-label">Specialties supported</div></div>
           <div className="stat"><div className="stat-num">$0</div><div className="stat-label">To get started today</div></div>
         </div>
       </div>
@@ -263,7 +263,7 @@ export default function LandingPage() {
       <section className="problem-bg">
         <div className="section-inner">
           <div className="eyebrow">The problem we solve</div>
-          <h2 className="section-title">Vets spend too much time<br />on paperwork, not patients</h2>
+          <h2 className="section-title">Doctors spend too much time<br />on paperwork, not patients</h2>
           <div className="problem-grid">
             <ul className="problem-list">
               {[
@@ -286,7 +286,7 @@ export default function LandingPage() {
               <p>One platform that handles the clinical administration — so your doctors can focus on what matters: the patients.</p>
               <ul className="solution-items">
                 <li>Clinical notes generated automatically for clinician review</li>
-                <li>Drug dosage guidance by species and weight — for clinician verification</li>
+                <li>Drug dosage guidance by condition and weight — for clinician verification</li>
                 <li>Automatic urgency flagging for every case</li>
                 <li>Full patient history in one place</li>
                 <li>Powered by the Gold Standard Medical Research</li>
@@ -363,9 +363,9 @@ export default function LandingPage() {
           <p className="section-sub">Healthpost is a full hospital operating system — not just a diagnostic tool.</p>
           <div className="modules-grid">
             {[
-              { icon: "🧠", title: "Clinical Support", desc: "Intelligent clinical guidance across symptoms, breed, age and weight — generated for veterinarian review.", live: true },
-              { icon: "💊", title: "Drug Guidance", desc: "Dosage ranges by species and weight, plus interaction notes — for clinician verification before prescribing.", live: true },
-              { icon: "📋", title: "SOAP Notes", desc: "Clinical note drafts generated automatically — ready for your vet to review, edit and sign off.", live: true },
+              { icon: "🧠", title: "Clinical Support", desc: "Intelligent clinical guidance across symptoms, specialty, age and weight — generated for doctor review.", live: true },
+              { icon: "💊", title: "Drug Guidance", desc: "Dosage ranges by condition and weight, plus interaction notes — for clinician verification before prescribing.", live: true },
+              { icon: "📋", title: "SOAP Notes", desc: "Clinical note drafts generated automatically — ready for your doctor to review, edit and sign off.", live: true },
               { icon: "🚨", title: "Urgency Triage", desc: "Every case is automatically flagged as high, medium or low urgency so your team knows what to prioritise.", live: true },
               { icon: "📁", title: "Patient Records", desc: "Full pet medical history, consultation logs, and owner details — all in one secure digital record.", live: true },
               { icon: "📅", title: "Appointments", desc: "Scheduling, reminders, and calendar management for your entire clinic team.", live: false },
@@ -391,9 +391,9 @@ export default function LandingPage() {
           <p className="section-sub">No installation. No training. Start managing cases immediately.</p>
           <div className="steps">
             {[
-              { num: "01", title: "Enter the case", desc: "Input the patient type, breed, age, weight and symptoms. The more detail, the more complete the clinical support." },
+              { num: "01", title: "Enter the case", desc: "Input the patient type, specialty, age, weight and symptoms. The more detail, the more complete the clinical support." },
               { num: "02", title: "Clinical support is generated", desc: "Healthpost searches the Medical Research Database, checks drug dosages, triages urgency, and prepares a clinical summary — automatically." },
-              { num: "03", title: "Veterinarian reviews and acts", desc: "Your vet reviews the differential diagnoses, drug guidance, and SOAP note draft — then makes the clinical decision." },
+              { num: "03", title: "Doctor reviews and acts", desc: "Your vet reviews the differential diagnoses, drug guidance, and SOAP note draft — then makes the clinical decision." },
               { num: "04", title: "Saved to patient records", desc: "Every case is automatically saved to the patient's history for full continuity of care across every visit." },
             ].map((s) => (
               <div className="step" key={s.num}>
@@ -442,17 +442,17 @@ export default function LandingPage() {
             {[
               {
                 name: "Starter", price: "$49", period: "per month",
-                features: ["1 vet account", "Up to 200 cases/month", "Clinical support & triage", "Drug dosage guidance", "SOAP note drafts", "Printable reports", "Email support"],
+                features: ["1 doctor account", "Up to 200 cases/month", "Clinical support & triage", "Drug dosage guidance", "SOAP note drafts", "Printable reports", "Email support"],
                 featured: false, popular: false,
               },
               {
                 name: "Professional", price: "$99", period: "per month",
-                features: ["3 vet accounts", "Unlimited cases", "Clinical support & triage", "Drug dosage guidance", "SOAP note drafts", "Patient records", "Case history & export", "Priority support"],
+                features: ["3 doctor accounts", "Unlimited cases", "Clinical support & triage", "Drug dosage guidance", "SOAP note drafts", "Patient records", "Case history & export", "Priority support"],
                 featured: true, popular: true,
               },
               {
                 name: "Hospital OS", price: "$199", period: "per month",
-                features: ["10 vet accounts", "Unlimited cases", "Full clinic OS access", "Patient records", "Appointments", "Billing & invoicing", "Advanced analytics", "Dedicated support"],
+                features: ["10 doctor accounts", "Unlimited cases", "Full clinic OS access", "Patient records", "Appointments", "Billing & invoicing", "Advanced analytics", "Dedicated support"],
                 featured: false, popular: false,
               },
             ].map((p) => (

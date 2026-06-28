@@ -12,7 +12,7 @@ const PLANS = [
     period: "/month",
     planCode: process.env.NEXT_PUBLIC_PAYSTACK_STARTER_PLAN!,
     features: [
-      "1 vet account",
+      "1 doctor account",
       "200 cases/month",
       "AI clinical support & triage",
       "Drug dosage guidance",
@@ -29,7 +29,7 @@ const PLANS = [
     period: "/month",
     planCode: process.env.NEXT_PUBLIC_PAYSTACK_PROFESSIONAL_PLAN!,
     features: [
-      "3 vet accounts",
+      "3 doctor accounts",
       "Unlimited cases",
       "AI clinical support & triage",
       "Drug dosage guidance",
@@ -47,7 +47,7 @@ const PLANS = [
     period: "/month",
     planCode: process.env.NEXT_PUBLIC_PAYSTACK_CLINIC_OS_PLAN!,
     features: [
-      "10 vet accounts",
+      "10 doctor accounts",
       "Unlimited cases",
       "Full clinic OS access",
       "Patient records",

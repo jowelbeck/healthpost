@@ -486,7 +486,7 @@ export default function Home() {
   ${soapSection}
   ${sourcesSection}
 
-  <div class="disclaimer">${data.disclaimer || "This report is not a substitute for professional medical advice. Always consult a licensed veterinarian."}</div>
+  <div class="disclaimer">${data.disclaimer || "This report is not a substitute for professional medical advice. Always consult a licensed doctor."}</div>
 </body>
 </html>`;
   };
@@ -805,7 +805,7 @@ export default function Home() {
                 <strong>🚨 Emergency: Seek immediate medical care</strong>
                 This case has been flagged as high urgency based on the symptoms provided.
                 <ul>
-                  <li>Contact a veterinarian immediately</li>
+                  <li>Contact a doctor immediately</li>
                   <li>Do not give medication unless instructed</li>
                   <li>Keep the animal calm and safe</li>
                   <li>Prepare to visit the nearest clinic</li>
@@ -903,13 +903,13 @@ export default function Home() {
                 <div className="btn-row" style={{ marginTop: 20 }}>
                   <button
                     className="btn btn-secondary"
-                    onClick={() => printReport(result, { petName, animal, breed, age, weight })}
+                    onClick={() => printReport(result, { petName, animal, specialty, age, weight })}
                   >
                     🖨 Print report
                   </button>
                   <button
                     className="btn btn-secondary"
-                    onClick={() => downloadPDF(result, { petName, animal, breed, age, weight })}
+                    onClick={() => downloadPDF(result, { petName, animal, specialty, age, weight })}
                   >
                     ↓ Download report
                   </button>
