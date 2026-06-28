@@ -202,7 +202,7 @@ export default function LandingPage() {
       {/* Nav */}
       <nav>
         <a href="/" className="nav-logo">
-          <img src="/healthpost-icon.svg" alt="Healthpost" width={36} height={36} style={{ borderRadius: "9px" }} />
+          <img src="/healthpost-icon.svg.png" alt="Healthpost" width={36} height={36} style={{ borderRadius: "9px" }} />
           <span className="nav-logo-text">Healthpost</span>
         </a>
         <div className="nav-links">
@@ -367,10 +367,10 @@ export default function LandingPage() {
               { icon: "💊", title: "Drug Guidance", desc: "Dosage ranges by condition and weight, plus interaction notes — for clinician verification before prescribing.", live: true },
               { icon: "📋", title: "SOAP Notes", desc: "Clinical note drafts generated automatically — ready for your doctor to review, edit and sign off.", live: true },
               { icon: "🚨", title: "Urgency Triage", desc: "Every case is automatically flagged as high, medium or low urgency so your team knows what to prioritise.", live: true },
-              { icon: "📁", title: "Patient Records", desc: "Full pet medical history, consultation logs, and owner details — all in one secure digital record.", live: true },
+              { icon: "📁", title: "Patient Records", desc: "Full patient medical history, consultation logs, and owner details — all in one secure digital record.", live: true },
               { icon: "📅", title: "Appointments", desc: "Scheduling, reminders, and calendar management for your entire clinic team.", live: false },
               { icon: "💰", title: "Billing & Invoicing", desc: "Generate invoices, track payments, and manage clinic finances from one dashboard.", live: true },
-              { icon: "👥", title: "Multi-user Access", desc: "Role-based access for vets, nurses, and admin staff across your entire clinic.", live: true },
+              { icon: "👥", title: "Multi-user Access", desc: "Role-based access for doctors, nurses, and admin staff across your entire clinic.", live: true },
               { icon: "📊", title: "Clinic Analytics", desc: "Case trends, common diagnoses, urgency patterns, and clinic performance reports.", live: true },
             ].map((m) => (
               <div className={`module-card ${m.live ? "live" : "coming"}`} key={m.title}>
@@ -393,7 +393,7 @@ export default function LandingPage() {
             {[
               { num: "01", title: "Enter the case", desc: "Input the patient type, specialty, age, weight and symptoms. The more detail, the more complete the clinical support." },
               { num: "02", title: "Clinical support is generated", desc: "Healthpost searches the Medical Research Database, checks drug dosages, triages urgency, and prepares a clinical summary — automatically." },
-              { num: "03", title: "Doctor reviews and acts", desc: "Your vet reviews the differential diagnoses, drug guidance, and SOAP note draft — then makes the clinical decision." },
+              { num: "03", title: "Doctor reviews and acts", desc: "Your doctor reviews the differential diagnoses, drug guidance, and SOAP note draft — then makes the clinical decision." },
               { num: "04", title: "Saved to patient records", desc: "Every case is automatically saved to the patient's history for full continuity of care across every visit." },
             ].map((s) => (
               <div className="step" key={s.num}>
@@ -420,7 +420,7 @@ export default function LandingPage() {
             </div>
             <div className="urgency-card urgency-medium">
               <div className="urgency-label">🟠 Medium urgency</div>
-              <div className="urgency-title">See vet within 24 hours</div>
+              <div className="urgency-title">See doctor within 24 hours</div>
               <div className="urgency-examples">Limping · Vomiting · Diarrhea · Swelling · Infection signs · Reduced appetite</div>
             </div>
             <div className="urgency-card urgency-low">
@@ -497,7 +497,7 @@ export default function LandingPage() {
       {/* Footer */}
       <footer>
         <div style={{ marginBottom: 12 }}>
-          <span style={{ display: "flex", alignItems: "center", gap: "8px", color: "rgba(255,255,255,0.9)", fontWeight: 600 }}><img src="/healthpost-icon.svg" alt="Healthpost" width={24} height={24} style={{ borderRadius: "6px" }} /> Healthpost</span>
+          <span style={{ display: "flex", alignItems: "center", gap: "8px", color: "rgba(255,255,255,0.9)", fontWeight: 600 }}><img src="/healthpost-icon.svg.png" alt="Healthpost" width={24} height={24} style={{ borderRadius: "6px" }} /> Healthpost</span>
           &nbsp;·&nbsp; Clinic operating system for medical professionals worldwide
         </div>
         <div style={{ display: "flex", gap: 20, justifyContent: "center", flexWrap: "wrap", marginBottom: 16 }}>
